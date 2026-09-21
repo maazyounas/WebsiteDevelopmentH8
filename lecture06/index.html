@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 06 - Portfolio Website</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 40px;
+        line-height: 1.6;
+    }
+
+    h1 {
+        color: #1f4e79;
+    }
+
+    h2 {
+        color: #2f6f3e;
+    }
+
+    pre {
+        background-color: #222;
+        color: white;
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    code {
+        color: #c7254e;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<h1>Lecture 06 — Build a Portfolio Website</h1>
+
+
+<h2>1. What We Will Build</h2>
+
+<p>Our portfolio will contain four pages:</p>
+
+<ul>
+    <li>Home</li>
+    <li>About</li>
+    <li>Projects</li>
+    <li>Contact</li>
+</ul>
+
+<p>
+    All pages will have the same navigation bar.
+</p>
+
+
+<h2>2. Project Folder Structure</h2>
+
+<pre>
+```
+
+portfolio/
+│
+├── index.html
+├── about.html
+├── projects.html
+├── contact.html
+│
+└── style.css </pre>
+
+```
+<p>
+    We will use one external CSS file called
+    <code>style.css</code> for all pages.
+</p>
+
+
+<h2>3. Why External CSS?</h2>
+
+<p>
+    Instead of writing CSS separately on every HTML page, we create
+    one CSS file and connect it to every page.
+</p>
+
+<pre>
+```
+
+<link rel="stylesheet" href="style.css"> </pre>
+
+```
+<p>
+    This allows us to maintain the design from one place.
+</p>
+
+
+<h2>4. Navigation Bar</h2>
+
+<p>
+    We will create a navigation bar using the
+    <code>&lt;nav&gt;</code> element and anchor tags.
+</p>
+
+<pre>
+```
+
+<nav>
+
+```
+&lt;a href="index.html"&gt;Home&lt;/a&gt;
+
+&lt;a href="about.html"&gt;About&lt;/a&gt;
+
+&lt;a href="projects.html"&gt;Projects&lt;/a&gt;
+
+&lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+```
+
+</nav> </pre>
+
+```
+<p>
+    The <code>href</code> attribute tells the browser which HTML page
+    to open.
+</p>
+
+
+<h2>5. HTML Routing</h2>
+
+<p>
+    In this project, we are using simple HTML page-to-page navigation.
+</p>
+
+<p>For example:</p>
+
+<pre>
+```
+
+Home → index.html
+
+About → about.html
+
+Projects → projects.html
+
+Contact → contact.html </pre>
+
+```
+<p>
+    When the user clicks a link, the browser opens the corresponding
+    HTML file.
+</p>
+
+
+<h2>6. Home Page — index.html</h2>
+
+<p>Create a file called <code>index.html</code>.</p>
+
+<pre>
+```
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+```
+&lt;meta charset="UTF-8"&gt;
+
+&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;title&gt;My Portfolio - Home&lt;/title&gt;
+
+&lt;link rel="stylesheet" href="style.css"&gt;
+```
+
+</head>
+
+<body>
+
+```
+&lt;nav&gt;
+
+    &lt;h2&gt;My Portfolio&lt;/h2&gt;
+
+    &lt;div&gt;
+
+        &lt;a href="index.html"&gt;Home&lt;/a&gt;
+
+        &lt;a href="about.html"&gt;About&lt;/a&gt;
+
+        &lt;a href="projects.html"&gt;Projects&lt;/a&gt;
+
+        &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+
+    &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+&lt;main&gt;
+
+    &lt;section&gt;
+
+        &lt;h1&gt;Hello, I'm Maaz&lt;/h1&gt;
+
+        &lt;p&gt;
+            I am a Web Developer and Computer Science graduate.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            Welcome to my personal portfolio website.
+        &lt;/p&gt;
+
+        &lt;a href="projects.html"&gt;
+            View My Projects
+        &lt;/a&gt;
+
+    &lt;/section&gt;
+
+&lt;/main&gt;
+```
+
+</body>
+
+</html> </pre>
+
+```
+<h2>7. About Page — about.html</h2>
+
+<pre>
+```
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+```
+&lt;meta charset="UTF-8"&gt;
+
+&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;title&gt;My Portfolio - About&lt;/title&gt;
+
+&lt;link rel="stylesheet" href="style.css"&gt;
+```
+
+</head>
+
+<body>
+
+```
+&lt;nav&gt;
+
+    &lt;h2&gt;My Portfolio&lt;/h2&gt;
+
+    &lt;div&gt;
+
+        &lt;a href="index.html"&gt;Home&lt;/a&gt;
+
+        &lt;a href="about.html"&gt;About&lt;/a&gt;
+
+        &lt;a href="projects.html"&gt;Projects&lt;/a&gt;
+
+        &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+
+    &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+&lt;main&gt;
+
+    &lt;section&gt;
+
+        &lt;h1&gt;About Me&lt;/h1&gt;
+
+        &lt;p&gt;
+            My name is Maaz. I am a Computer Science graduate
+            interested in web development.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            I enjoy creating websites and learning new technologies.
+        &lt;/p&gt;
+
+
+        &lt;h2&gt;My Skills&lt;/h2&gt;
+
+        &lt;ul&gt;
+
+            &lt;li&gt;HTML&lt;/li&gt;
+
+            &lt;li&gt;CSS&lt;/li&gt;
+
+            &lt;li&gt;JavaScript&lt;/li&gt;
+
+            &lt;li&gt;React&lt;/li&gt;
+
+        &lt;/ul&gt;
+
+    &lt;/section&gt;
+
+&lt;/main&gt;
+```
+
+</body>
+
+</html> </pre>
+
+```
+<h2>8. Projects Page — projects.html</h2>
+
+<pre>
+```
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+```
+&lt;meta charset="UTF-8"&gt;
+
+&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;title&gt;My Portfolio - Projects&lt;/title&gt;
+
+&lt;link rel="stylesheet" href="style.css"&gt;
+```
+
+</head>
+
+<body>
+
+```
+&lt;nav&gt;
+
+    &lt;h2&gt;My Portfolio&lt;/h2&gt;
+
+    &lt;div&gt;
+
+        &lt;a href="index.html"&gt;Home&lt;/a&gt;
+
+        &lt;a href="about.html"&gt;About&lt;/a&gt;
+
+        &lt;a href="projects.html"&gt;Projects&lt;/a&gt;
+
+        &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+
+    &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+&lt;main&gt;
+
+    &lt;section&gt;
+
+        &lt;h1&gt;My Projects&lt;/h1&gt;
+
+
+        &lt;div&gt;
+
+            &lt;h2&gt;Project 1 - Portfolio Website&lt;/h2&gt;
+
+            &lt;p&gt;
+                A personal portfolio website created using HTML
+                and CSS.
+            &lt;/p&gt;
+
+        &lt;/div&gt;
+
+
+        &lt;div&gt;
+
+            &lt;h2&gt;Project 2 - Restaurant Website&lt;/h2&gt;
+
+            &lt;p&gt;
+                A simple restaurant website containing a menu,
+                services and contact information.
+            &lt;/p&gt;
+
+        &lt;/div&gt;
+
+
+        &lt;div&gt;
+
+            &lt;h2&gt;Project 3 - Weather Website&lt;/h2&gt;
+
+            &lt;p&gt;
+                A weather website that displays weather information
+                for different cities.
+            &lt;/p&gt;
+
+        &lt;/div&gt;
+
+    &lt;/section&gt;
+
+&lt;/main&gt;
+```
+
+</body>
+
+</html> </pre>
+
+```
+<h2>9. Contact Page — contact.html</h2>
+
+<pre>
+```
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+```
+&lt;meta charset="UTF-8"&gt;
+
+&lt;meta name="viewport"
+      content="width=device-width, initial-scale=1.0"&gt;
+
+&lt;title&gt;My Portfolio - Contact&lt;/title&gt;
+
+&lt;link rel="stylesheet" href="style.css"&gt;
+```
+
+</head>
+
+<body>
+
+```
+&lt;nav&gt;
+
+    &lt;h2&gt;My Portfolio&lt;/h2&gt;
+
+    &lt;div&gt;
+
+        &lt;a href="index.html"&gt;Home&lt;/a&gt;
+
+        &lt;a href="about.html"&gt;About&lt;/a&gt;
+
+        &lt;a href="projects.html"&gt;Projects&lt;/a&gt;
+
+        &lt;a href="contact.html"&gt;Contact&lt;/a&gt;
+
+    &lt;/div&gt;
+
+&lt;/nav&gt;
+
+
+&lt;main&gt;
+
+    &lt;section&gt;
+
+        &lt;h1&gt;Contact Me&lt;/h1&gt;
+
+        &lt;p&gt;
+            You can contact me using the information below.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            Email:
+            &lt;a href="mailto:example@gmail.com"&gt;
+                example@gmail.com
+            &lt;/a&gt;
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            Phone: +92 300 0000000
+        &lt;/p&gt;
+
+        &lt;p&gt;
+            Location: Pakistan
+        &lt;/p&gt;
+
+    &lt;/section&gt;
+
+&lt;/main&gt;
+```
+
+</body>
+
+</html> </pre>
+
+```
+<h2>10. External CSS — style.css</h2>
+
+<p>
+    Now create a file called <code>style.css</code>.
+</p>
+
+<pre>
+```
+
+/* General Styling */
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f4f4f4;
+color: #222;
+}
+
+/* Navigation Bar */
+
+nav {
+background-color: #222;
+padding: 20px;
+}
+
+nav h2 {
+color: white;
+display: inline;
+}
+
+nav div {
+float: right;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin-left: 20px;
+}
+
+/* Navigation Hover */
+
+nav a:hover {
+color: orange;
+}
+
+/* Main Content */
+
+main {
+padding: 50px;
+}
+
+/* Sections */
+
+section {
+background-color: white;
+padding: 40px;
+}
+
+/* Headings */
+
+h1 {
+color: #1f4e79;
+font-size: 40px;
+}
+
+h2 {
+color: #333;
+}
+
+/* Paragraphs */
+
+p {
+font-size: 18px;
+line-height: 1.6;
+}
+
+/* Links */
+
+a {
+color: #1f4e79;
+}
+
+/* Project Boxes */
+
+section div {
+background-color: #eeeeee;
+padding: 20px;
+margin-bottom: 20px;
+} </pre>
+
+```
+<h2>11. Understanding the CSS</h2>
+
+<h3>body</h3>
+
+<pre>
+```
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f4f4f4;
+} </pre>
+
+```
+<p>
+    This styles the complete webpage.
+</p>
+
+
+<h3>nav</h3>
+
+<pre>
+```
+
+nav {
+background-color: #222;
+padding: 20px;
+} </pre>
+
+```
+<p>
+    This creates the dark navigation bar.
+</p>
+
+
+<h3>nav a</h3>
+
+<pre>
+```
+
+nav a {
+color: white;
+text-decoration: none;
+margin-left: 20px;
+} </pre>
+
+```
+<p>
+    This styles the navigation links.
+</p>
+
+
+<h3>nav a:hover</h3>
+
+<pre>
+```
+
+nav a:hover {
+color: orange;
+} </pre>
+
+```
+<p>
+    The <code>:hover</code> pseudo-class applies the style when the
+    mouse pointer is over the link.
+</p>
+
+
+<h2>12. Important Concepts Used</h2>
+
+<ul>
+    <li>HTML document structure</li>
+    <li>Semantic HTML</li>
+    <li>Navigation using &lt;nav&gt;</li>
+    <li>Anchor tags</li>
+    <li>Relative links</li>
+    <li>Multiple HTML pages</li>
+    <li>External CSS</li>
+    <li>Element selectors</li>
+    <li>Class selectors</li>
+    <li>CSS properties</li>
+    <li>Margin</li>
+    <li>Padding</li>
+    <li>Colors</li>
+    <li>Font size</li>
+    <li>Text decoration</li>
+    <li>Hover effect</li>
+</ul>
+
+
+<h2>13. How the Pages Are Connected</h2>
+
+<pre>
+             index.html
+                 |
+    +------------+------------+
+    |            |            |
+    ↓            ↓            ↓
+```
+
+about.html   projects.html  contact.html
+|            |            |
++------------+------------+
+|
+Navigation </pre>
+
+```
+<p>
+    Every page contains the same navigation links, allowing the user
+    to move between the pages.
+</p>
+
+
+<h2>14. Student Task</h2>
+
+<p>
+    Students should create their own portfolio website by replacing
+    the example content with their own information.
+</p>
+
+<h3>Requirements</h3>
+
+<ol>
+    <li>Create all four HTML pages.</li>
+    <li>Create one external CSS file.</li>
+    <li>Add the same navbar to every page.</li>
+    <li>Add Home, About, Projects and Contact links.</li>
+    <li>Add your own name.</li>
+    <li>Add your own introduction.</li>
+    <li>Add at least three projects.</li>
+    <li>Add your skills.</li>
+    <li>Add your contact information.</li>
+    <li>Style the website using CSS.</li>
+    <li>Test every navigation link.</li>
+</ol>
+
+
+<h2>15. Final Project Structure</h2>
+
+<pre>
+```
+
+my-portfolio/
+│
+├── index.html
+├── about.html
+├── projects.html
+├── contact.html
+│
+└── style.css </pre>
+
+```
+<h2>16. What Students Learned</h2>
+
+<ul>
+    <li>How to create a multi-page website.</li>
+    <li>How HTML links work.</li>
+    <li>How to connect HTML pages.</li>
+    <li>How to create a navbar.</li>
+    <li>How to use external CSS.</li>
+    <li>How to style HTML elements.</li>
+    <li>How to use CSS selectors.</li>
+    <li>How to use margin and padding.</li>
+    <li>How to use hover effects.</li>
+    <li>How to organize a website project.</li>
+</ul>
+
+
+<h2>Next Lecture</h2>
+
+<p>
+    In the next lecture, we can start the
+    <strong>CSS Box Model</strong> and improve this portfolio
+    using width, height, border, border-radius, margin, padding
+    and box-sizing.
+</p>
+```
+
+</body>
+</html>

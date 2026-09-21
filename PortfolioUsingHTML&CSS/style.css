@@ -1,0 +1,148 @@
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f4f4f4;
+color: #222;
+}
+
+/* Navigation Bar */
+
+nav {
+background-color: #222;
+padding: 20px;
+}
+
+nav h2 {
+color: white;
+display: inline;
+}
+
+nav div {
+float: right;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin-left: 20px;
+}
+
+nav a:hover {
+color: orange;
+}
+
+/* All Sections */
+
+section {
+padding: 60px 10%;
+min-height: 300px;
+}
+
+/* Home */
+
+#home {
+background-color: white;
+}
+
+#home h1 {
+font-size: 40px;
+color: #1f4e79;
+}
+
+#home h2 {
+color: #555;
+}
+
+#home p {
+font-size: 18px;
+}
+
+/* Button */
+
+.button {
+display: inline-block;
+background-color: #1f4e79;
+color: white;
+padding: 10px 20px;
+text-decoration: none;
+margin-top: 15px;
+}
+
+.button:hover {
+background-color: #333;
+}
+
+/* Headings */
+
+section h1 {
+color: #1f4e79;
+font-size: 32px;
+}
+
+/* About */
+
+#about {
+background-color: #e9eef2;
+}
+
+#about p {
+font-size: 18px;
+}
+
+/* Skills */
+
+#skills {
+background-color: white;
+}
+
+#skills li {
+margin-bottom: 10px;
+font-size: 18px;
+}
+
+/* Projects */
+
+#projects {
+background-color: #e9eef2;
+}
+
+.project {
+background-color: white;
+padding: 20px;
+margin-bottom: 20px;
+}
+
+.project h2 {
+color: #333;
+}
+
+.project p {
+font-size: 16px;
+}
+
+.project a {
+color: #1f4e79;
+}
+
+/* Contact */
+
+#contact {
+background-color: white;
+}
+
+#contact p {
+font-size: 18px;
+}
+
+#contact a {
+color: #1f4e79;
+}
+
+/* Footer */
+
+footer {
+background-color: #222;
+color: white;
+text-align: center;
+padding: 20px;
+}

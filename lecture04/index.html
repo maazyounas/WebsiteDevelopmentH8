@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Lecture 04 - Git, GitHub & CSS</title>
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Web Development - Lecture 04</h1>
+
+    <p>Git, GitHub & Introduction to CSS</p>
+
+    <hr>
+
+</header>
+
+
+<main>
+
+    <!-- ================================= -->
+    <!-- 1. INTRODUCTION -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            In this lecture, we learned the basics of Git and GitHub,
+            installed Git on our computers, connected GitHub with VS Code,
+            and learned the basic commands used to manage and share our
+            projects.
+        </p>
+
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 2. WHAT IS GIT -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>2. What is Git?</h2>
+
+        <p>
+            Git is a <strong>version control system</strong> used to
+            track changes in source code and project files.
+        </p>
+
+        <p>
+            Git allows developers to save different versions of their
+            projects and keep track of changes over time.
+        </p>
+
+        <h3>Why do we use Git?</h3>
+
+        <ul>
+
+            <li>Track changes in a project</li>
+
+            <li>Save different versions of code</li>
+
+            <li>Undo changes when necessary</li>
+
+            <li>Work with other developers</li>
+
+            <li>Manage projects efficiently</li>
+
+            <li>Connect local projects with GitHub</li>
+
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 3. WHAT IS GITHUB -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>3. What is GitHub?</h2>
+
+        <p>
+            GitHub is a platform where developers can store, manage,
+            share, and collaborate on software projects using Git.
+        </p>
+
+        <p>
+            Git is the version control system, while GitHub is an online
+            platform that can host Git repositories.
+        </p>
+
+        <h3>Git vs GitHub</h3>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+
+                <th>Git</th>
+                <th>GitHub</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Version control system</td>
+
+                <td>Online platform for Git repositories</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Runs on your computer</td>
+
+                <td>Runs primarily as an online service</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Tracks project changes</td>
+
+                <td>Stores and shares repositories online</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 4. INSTALL GIT -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>4. Installing Git</h2>
+
+        <p>
+            Before using Git commands, Git needs to be installed
+            on the computer.
+        </p>
+
+        <h3>Basic Steps</h3>
+
+        <ol>
+
+            <li>Download Git for your operating system.</li>
+
+            <li>Run the Git installer.</li>
+
+            <li>Follow the installation steps.</li>
+
+            <li>Complete the installation.</li>
+
+            <li>Open Terminal or Git Bash.</li>
+
+            <li>Check whether Git is installed.</li>
+
+        </ol>
+
+        <h3>Check Git Installation</h3>
+
+        <pre>
+```
+
+git --version </pre>
+
+```
+        <p>
+            If Git is installed correctly, the terminal will display
+            the installed Git version.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 5. GITHUB ACCOUNT -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>5. Creating a GitHub Account</h2>
+
+        <p>
+            GitHub requires an account to create and manage repositories
+            online.
+        </p>
+
+        <h3>Basic Steps</h3>
+
+        <ol>
+
+            <li>Open the GitHub website.</li>
+
+            <li>Click Sign Up.</li>
+
+            <li>Create or use an email account.</li>
+
+            <li>In our setup, we used the
+                <strong>Continue with Google</strong>
+                option to create/sign in to the GitHub account.
+            </li>
+
+            <li>Complete the required account setup.</li>
+
+        </ol>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 6. VS CODE AND GITHUB -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>6. Connecting VS Code with GitHub</h2>
+
+        <p>
+            Visual Studio Code provides Git and GitHub integration,
+            allowing developers to work with repositories directly
+            from the editor.
+        </p>
+
+        <p>
+            We signed into GitHub from VS Code so that our local
+            development environment could work with our GitHub account.
+        </p>
+
+        <h3>Why connect VS Code with GitHub?</h3>
+
+        <ul>
+
+            <li>Clone repositories</li>
+
+            <li>Publish projects</li>
+
+            <li>Commit changes</li>
+
+            <li>Push changes</li>
+
+            <li>Pull changes</li>
+
+            <li>Manage source control</li>
+
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 7. GIT EXTENSIONS -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>7. Useful VS Code Extensions</h2>
+
+        <p>
+            VS Code extensions can make development and Git workflows
+            easier.
+        </p>
+
+        <h3>Common Extensions / Tools</h3>
+
+        <ul>
+
+            <li>
+                <strong>Live Server</strong>
+                - Runs HTML webpages locally.
+            </li>
+
+            <li>
+                <strong>Prettier</strong>
+                - Formats code.
+            </li>
+
+            <li>
+                <strong>Auto Rename Tag</strong>
+                - Helps rename HTML tags.
+            </li>
+
+            <li>
+                <strong>Auto Close Tag</strong>
+                - Automatically adds closing tags.
+            </li>
+
+            <li>
+                <strong>GitHub integration</strong>
+                - Helps work with GitHub repositories from VS Code.
+            </li>
+
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 8. GIT CONFIGURATION -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>8. Configuring Git</h2>
+
+        <p>
+            Before making commits, we configure Git with our name
+            and email address.
+        </p>
+
+        <h3>Configure Username</h3>
+
+        <pre>
+```
+
+git config --global user.name "Your Name" </pre>
+
+```
+        <h3>Configure Email</h3>
+
+        <pre>
+```
+
+git config --global user.email "[your-email@example.com](mailto:your-email@example.com)" </pre>
+
+```
+        <p>
+            Replace the example values with your own name and
+            email address.
+        </p>
+
+        <h3>Check Git Configuration</h3>
+
+        <pre>
+```
+
+git config --global user.name
+
+git config --global user.email </pre>
+
+```
+        <p>
+            These settings tell Git who is making the commits
+            on the computer.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 9. GIT REPOSITORY -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>9. What is a Repository?</h2>
+
+        <p>
+            A repository, commonly called a <strong>repo</strong>,
+            is a project managed by Git.
+        </p>
+
+        <p>
+            A repository can contain source code, images, documentation,
+            configuration files, and other project files.
+        </p>
+
+        <p>
+            A repository can exist locally on your computer and can
+            also be hosted on GitHub.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 10. INITIALIZE REPOSITORY -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>10. Creating a Git Repository</h2>
+
+        <p>
+            To start tracking a local project with Git, we can
+            initialize a Git repository.
+        </p>
+
+        <pre>
+```
+
+git init </pre>
+
+```
+        <p>
+            This creates a hidden <strong>.git</strong> directory
+            that stores information used by Git.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 11. GIT STATUS -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>11. Checking Git Status</h2>
+
+        <p>
+            The <strong>git status</strong> command shows the current
+            state of the Git repository.
+        </p>
+
+        <pre>
+```
+
+git status </pre>
+
+```
+        <p>
+            It can show files that have been modified, added,
+            or are not yet being tracked.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 12. GIT ADD -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>12. Git Add</h2>
+
+        <p>
+            The <strong>git add</strong> command adds changes to
+            the staging area.
+        </p>
+
+        <h3>Add one file:</h3>
+
+        <pre>
+```
+
+git add index.html </pre>
+
+```
+        <h3>Add all changed files:</h3>
+
+        <pre>
+```
+
+git add . </pre>
+
+```
+        <p>
+            The staging area allows us to choose which changes will
+            be included in the next commit.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 13. GIT COMMIT -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>13. Git Commit</h2>
+
+        <p>
+            A commit saves a snapshot of the staged changes
+            in the local Git repository.
+        </p>
+
+        <pre>
+```
+
+git commit -m "Initial commit" </pre>
+
+```
+        <p>
+            The message describes what was changed in that commit.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 14. GIT LOG -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>14. Git Log</h2>
+
+        <p>
+            The <strong>git log</strong> command displays the
+            commit history of the repository.
+        </p>
+
+        <pre>
+```
+
+git log </pre>
+
+```
+        <p>
+            It can show information such as commit ID, author,
+            date, and commit message.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 15. GIT BRANCH -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>15. Git Branch</h2>
+
+        <p>
+            A branch is a separate line of development in a Git repository.
+        </p>
+
+        <h3>Check current branch:</h3>
+
+        <pre>
+```
+
+git branch </pre>
+
+```
+        <h3>Create a new branch:</h3>
+
+        <pre>
+```
+
+git branch feature </pre>
+
+```
+        <h3>Switch to a branch:</h3>
+
+        <pre>
+```
+
+git switch feature </pre>
+
+```
+        <p>
+            Branches are useful when developers want to work on
+            different features without directly changing the main branch.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 16. REMOTE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>16. What is a Remote Repository?</h2>
+
+        <p>
+            A remote repository is a version of a Git repository
+            stored somewhere other than your local computer.
+        </p>
+
+        <p>
+            GitHub is commonly used to host remote Git repositories.
+        </p>
+
+        <h3>Add a GitHub repository as a remote:</h3>
+
+        <pre>
+```
+
+git remote add origin https://github.com/username/repository.git </pre>
+
+```
+        <h3>Check remote:</h3>
+
+        <pre>
+```
+
+git remote -v </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 17. PUSH -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>17. Git Push</h2>
+
+        <p>
+            The <strong>git push</strong> command sends local commits
+            to a remote repository such as GitHub.
+        </p>
+
+        <pre>
+```
+
+git push </pre>
+
+```
+        <p>
+            A common first push can be:
+        </p>
+
+        <pre>
+```
+
+git push -u origin main </pre>
+
+```
+        <p>
+            After the upstream branch is configured, future pushes
+            can often be performed using:
+        </p>
+
+        <pre>
+```
+
+git push </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 18. CLONE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>18. Git Clone</h2>
+
+        <p>
+            The <strong>git clone</strong> command creates a local copy
+            of a remote Git repository.
+        </p>
+
+        <pre>
+```
+
+git clone https://github.com/username/repository.git </pre>
+
+```
+        <p>
+            This is useful when you want to download an existing
+            project from GitHub and work on it locally.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 19. PULL -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>19. Git Pull</h2>
+
+        <p>
+            The <strong>git pull</strong> command gets changes from
+            a remote repository and integrates them into the current
+            local branch.
+        </p>
+
+        <pre>
+```
+
+git pull </pre>
+
+```
+        <p>
+            It is commonly used when other developers have pushed
+            new changes to the remote repository.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 20. FETCH -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>20. Git Fetch</h2>
+
+        <p>
+            The <strong>git fetch</strong> command downloads information
+            about changes from a remote repository without automatically
+            integrating those changes into your current branch.
+        </p>
+
+        <pre>
+```
+
+git fetch </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 21. GIT DIFF -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>21. Git Diff</h2>
+
+        <p>
+            The <strong>git diff</strong> command shows differences
+            between versions or changes in files.
+        </p>
+
+        <pre>
+```
+
+git diff </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 22. COMPLETE GIT WORKFLOW -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>22. Basic Git Workflow</h2>
+
+        <p>
+            A common workflow for updating a project is:
+        </p>
+
+        <ol>
+
+            <li>Make changes to your project.</li>
+
+            <li>Check the changes.</li>
+
+            <li>Add the changes to staging.</li>
+
+            <li>Create a commit.</li>
+
+            <li>Push the commit to GitHub.</li>
+
+        </ol>
+
+        <pre>
+```
+
+git status
+
+git add .
+
+git commit -m "Updated project"
+
+git push </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 23. CLONE WORKFLOW -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>23. Working with an Existing GitHub Project</h2>
+
+        <p>
+            When you want to work on an existing GitHub project,
+            you can clone it.
+        </p>
+
+        <pre>
+```
+
+git clone https://github.com/username/repository.git </pre>
+
+```
+        <p>
+            Then enter the project directory:
+        </p>
+
+        <pre>
+```
+
+cd repository </pre>
+
+```
+        <p>
+            After making changes:
+        </p>
+
+        <pre>
+```
+
+git add .
+
+git commit -m "Updated project"
+
+git push </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 24. BASIC COMMAND SUMMARY -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>24. Important Git Commands</h2>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+
+                <th>Command</th>
+                <th>Purpose</th>
+
+            </tr>
+
+            <tr>
+                <td>git --version</td>
+                <td>Check Git version</td>
+            </tr>
+
+            <tr>
+                <td>git config</td>
+                <td>Configure Git settings</td>
+            </tr>
+
+            <tr>
+                <td>git init</td>
+                <td>Initialize a repository</td>
+            </tr>
+
+            <tr>
+                <td>git status</td>
+                <td>Check repository status</td>
+            </tr>
+
+            <tr>
+                <td>git add</td>
+                <td>Add changes to staging</td>
+            </tr>
+
+            <tr>
+                <td>git commit</td>
+                <td>Save a snapshot of staged changes</td>
+            </tr>
+
+            <tr>
+                <td>git log</td>
+                <td>View commit history</td>
+            </tr>
+
+            <tr>
+                <td>git branch</td>
+                <td>View or manage branches</td>
+            </tr>
+
+            <tr>
+                <td>git switch</td>
+                <td>Switch branches</td>
+            </tr>
+
+            <tr>
+                <td>git remote</td>
+                <td>Manage remote repositories</td>
+            </tr>
+
+            <tr>
+                <td>git clone</td>
+                <td>Copy a remote repository locally</td>
+            </tr>
+
+            <tr>
+                <td>git push</td>
+                <td>Send local commits to remote repository</td>
+            </tr>
+
+            <tr>
+                <td>git pull</td>
+                <td>Get and integrate remote changes</td>
+            </tr>
+
+            <tr>
+                <td>git fetch</td>
+                <td>Download remote changes without integrating them</td>
+            </tr>
+
+            <tr>
+                <td>git diff</td>
+                <td>View changes</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 25. GITHUB REPOSITORY -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>25. Creating a GitHub Repository</h2>
+
+        <p>
+            A GitHub repository is an online location where a project
+            can be stored and shared.
+        </p>
+
+        <h3>Basic Steps</h3>
+
+        <ol>
+
+            <li>Sign in to GitHub.</li>
+
+            <li>Create a new repository.</li>
+
+            <li>Give the repository a name.</li>
+
+            <li>Choose whether it should be public or private.</li>
+
+            <li>Create the repository.</li>
+
+            <li>Connect the local Git repository to GitHub.</li>
+
+            <li>Push the project to GitHub.</li>
+
+        </ol>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 26. LOCAL VS REMOTE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>26. Local Repository vs Remote Repository</h2>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+
+                <th>Local Repository</th>
+                <th>Remote Repository</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Stored on your computer</td>
+
+                <td>Stored on a remote service such as GitHub</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Managed using Git</td>
+
+                <td>Can be accessed through the internet</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Used for local development</td>
+
+                <td>Used for sharing and collaboration</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+
+</body>
+
+</html>

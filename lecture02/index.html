@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Lecture 02 - Frontend & Basic HTML</title>
+
+
+</head>
+
+<body>
+
+
+<header>
+    <h1>Web Development - Lecture 02</h1>
+    <p>Frontend Development & Introduction to HTML</p>
+    <hr>
+</header>
+
+<main>
+
+    <!-- ==================== -->
+    <!-- 1. FRONTEND -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>1. What is Frontend Development?</h2>
+
+        <p>
+            Frontend development is the development of the part of a website
+            or web application that users can see and interact with.
+        </p>
+
+        <p>
+            Everything that appears inside the browser, such as text, buttons,
+            images, forms, menus, and layouts, is part of the frontend.
+        </p>
+
+        <h3>Example</h3>
+
+        <p>
+            When you open a website and see a navigation bar, heading,
+            images, buttons, cards, and forms, these are frontend elements.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 2. FRONTEND TECHNOLOGIES -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>2. Main Frontend Technologies</h2>
+
+        <p>
+            The three fundamental technologies used in frontend development are:
+        </p>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+                <th>Technology</th>
+                <th>Purpose</th>
+            </tr>
+
+            <tr>
+                <td>HTML</td>
+                <td>Creates the structure of a webpage</td>
+            </tr>
+
+            <tr>
+                <td>CSS</td>
+                <td>Styles and designs the webpage</td>
+            </tr>
+
+            <tr>
+                <td>JavaScript</td>
+                <td>Adds functionality and interactivity</td>
+            </tr>
+
+        </table>
+
+        <h3>Easy Way to Remember</h3>
+
+        <ul>
+            <li><strong>HTML</strong> = Structure</li>
+            <li><strong>CSS</strong> = Design</li>
+            <li><strong>JavaScript</strong> = Behavior</li>
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 3. WHAT IS HTML -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>3. What is HTML?</h2>
+
+        <p>
+            HTML stands for
+            <strong>HyperText Markup Language</strong>.
+        </p>
+
+        <p>
+            HTML is the standard markup language used to create the structure
+            of webpages.
+        </p>
+
+        <p>
+            HTML tells the browser what content should appear on a webpage,
+            such as headings, paragraphs, images, links, lists, tables,
+            and forms.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 4. HTML IS NOT PROGRAMMING LANGUAGE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>4. Is HTML a Programming Language?</h2>
+
+        <p>
+            No. HTML is a <strong>markup language</strong>, not a programming language.
+        </p>
+
+        <p>
+            HTML is used to structure content. It does not provide programming
+            concepts such as conditions, loops, or functions.
+        </p>
+
+        <p>
+            JavaScript is a programming language that can be used to add
+            programming logic and interactivity to webpages.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 5. VS CODE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>5. What is Visual Studio Code?</h2>
+
+        <p>
+            Visual Studio Code, commonly called <strong>VS Code</strong>,
+            is a source-code editor developed by Microsoft.
+        </p>
+
+        <p>
+            We will use VS Code to write and manage our HTML, CSS,
+            and JavaScript code.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 6. VS CODE SETUP -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>6. Setting Up VS Code</h2>
+
+        <p>
+            Before starting development, we install Visual Studio Code
+            and prepare our development environment.
+        </p>
+
+        <h3>Basic Setup</h3>
+
+        <ol>
+
+            <li>Download and install Visual Studio Code.</li>
+
+            <li>Open Visual Studio Code.</li>
+
+            <li>Create a folder for your web development course.</li>
+
+            <li>Open that folder in VS Code.</li>
+
+            <li>Create a new HTML file.</li>
+
+            <li>Save the file as <strong>index.html</strong>.</li>
+
+        </ol>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 7. EXTENSIONS -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>7. Useful VS Code Extensions</h2>
+
+        <p>
+            Extensions add additional functionality to Visual Studio Code
+            and can make development easier.
+        </p>
+
+        <h3>Common Extensions for Web Development</h3>
+
+        <ul>
+
+            <li>
+                <strong>Live Server</strong>
+                <br>
+                Allows us to open our webpage in a browser and automatically
+                reload it when we save changes.
+            </li>
+
+            <br>
+
+            <li>
+                <strong>Prettier - Code Formatter</strong>
+                <br>
+                Automatically formats code and keeps its structure clean.
+            </li>
+
+            <br>
+
+            <li>
+                <strong>Auto Rename Tag</strong>
+                <br>
+                Automatically changes the closing tag when an HTML tag is renamed.
+            </li>
+
+            <br>
+
+            <li>
+                <strong>Auto Close Tag</strong>
+                <br>
+                Automatically adds closing HTML tags.
+            </li>
+
+        </ul>
+
+        <p>
+            Extensions are helpful tools, but learning HTML itself is more
+            important than depending on extensions.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 8. CREATE FIRST HTML FILE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>8. Creating Our First HTML File</h2>
+
+        <p>
+            We create a file named:
+        </p>
+
+        <p>
+            <strong>index.html</strong>
+        </p>
+
+        <p>
+            The file extension <strong>.html</strong> tells the computer
+            and development tools that the file contains HTML.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 9. BASIC HTML STRUCTURE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>9. Basic HTML Document Structure</h2>
+
+        <p>
+            Every HTML document normally starts with a basic structure.
+        </p>
+
+        <p>
+            The basic structure contains:
+        </p>
+
+        <ul>
+            <li>DOCTYPE declaration</li>
+            <li>html element</li>
+            <li>head element</li>
+            <li>body element</li>
+        </ul>
+
+        <h3>Basic Structure</h3>
+
+        <pre>
+```
+
+<!DOCTYPE html>
+
+<html>
+
+```
+&lt;head&gt;
+
+    &lt;title&gt;My Website&lt;/title&gt;
+
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+
+&lt;/body&gt;
+```
+
+</html> </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 10. DOCTYPE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>10. What is DOCTYPE?</h2>
+
+        <p>
+            <strong>&lt;!DOCTYPE html&gt;</strong> tells the browser that
+            the document uses HTML5.
+        </p>
+
+        <p>
+            It should normally be written at the beginning of an HTML document.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 11. HTML TAG -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>11. What is an HTML Tag?</h2>
+
+        <p>
+            HTML uses tags to define different types of content.
+        </p>
+
+        <p>
+            Example:
+        </p>
+
+        <pre>
+```
+
+<h1>Hello World</h1> </pre>
+
+```
+        <p>
+            Here:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>&lt;h1&gt;</strong>
+                is the opening tag.
+            </li>
+
+            <li>
+                <strong>Hello World</strong>
+                is the content.
+            </li>
+
+            <li>
+                <strong>&lt;/h1&gt;</strong>
+                is the closing tag.
+            </li>
+
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 12. HTML ELEMENT -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>12. What is an HTML Element?</h2>
+
+        <p>
+            An HTML element generally consists of an opening tag,
+            content, and a closing tag.
+        </p>
+
+        <pre>
+```
+
+<p>This is a paragraph.</p> </pre>
+
+```
+        <p>
+            The complete structure above is an HTML element.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 13. HEAD -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>13. What is the &lt;head&gt; Element?</h2>
+
+        <p>
+            The <strong>&lt;head&gt;</strong> element contains information
+            about the webpage that is generally not displayed as normal
+            page content.
+        </p>
+
+        <p>
+            It can contain:
+        </p>
+
+        <ul>
+            <li>Page title</li>
+            <li>Character encoding</li>
+            <li>Viewport information</li>
+            <li>CSS files</li>
+            <li>Other metadata</li>
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 14. BODY -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>14. What is the &lt;body&gt; Element?</h2>
+
+        <p>
+            The <strong>&lt;body&gt;</strong> element contains the content
+            that is displayed on the webpage.
+        </p>
+
+        <p>Examples include:</p>
+
+        <ul>
+            <li>Headings</li>
+            <li>Paragraphs</li>
+            <li>Images</li>
+            <li>Links</li>
+            <li>Lists</li>
+            <li>Tables</li>
+            <li>Forms</li>
+            <li>Buttons</li>
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 15. TITLE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>15. The &lt;title&gt; Element</h2>
+
+        <p>
+            The <strong>&lt;title&gt;</strong> element defines the title
+            of the webpage.
+        </p>
+
+        <p>
+            It usually appears in the browser tab.
+        </p>
+
+        <pre>
+```
+
+<title>My First Website</title> </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 16. HEADINGS -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>16. HTML Headings</h2>
+
+        <p>
+            HTML provides six heading levels.
+        </p>
+
+        <pre>
+```
+
+<h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6> </pre>
+
+```
+        <h1>Heading 1 Example</h1>
+        <h2>Heading 2 Example</h2>
+        <h3>Heading 3 Example</h3>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 17. PARAGRAPHS -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>17. HTML Paragraphs</h2>
+
+        <p>
+            The <strong>&lt;p&gt;</strong> element is used to create paragraphs.
+        </p>
+
+        <pre>
+```
+
+<p>
+This is my first paragraph.
+</p> </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 18. COMMENTS -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>18. HTML Comments</h2>
+
+        <p>
+            Comments are notes written inside the code for developers.
+            They are not displayed as normal webpage content.
+        </p>
+
+        <pre>
+```
+
+<!-- This is an HTML comment --> </pre>
+
+```
+        <p>
+            Comments are useful for explaining and organizing code.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 19. FIRST PRACTICE -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>19. First HTML Practice</h2>
+
+        <p>
+            Create a simple webpage containing:
+        </p>
+
+        <ol>
+
+            <li>Your name as an h1 heading</li>
+
+            <li>Your education as an h2 heading</li>
+
+            <li>A paragraph about yourself</li>
+
+            <li>Your hobbies</li>
+
+            <li>Your career goal</li>
+
+        </ol>
+
+        <h3>Example</h3>
+
+        <pre>
+```
+
+<h1>Muhammad Maaz Younas</h1>
+
+<h2>About Me</h2>
+
+<p>
+I am learning web development.
+</p>
+
+<h2>My Hobbies</h2>
+
+<p>
+Playing and travelling.
+</p> </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 20. RUN HTML -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>20. How to Run an HTML File</h2>
+
+        <ol>
+
+            <li>
+                Open your HTML file in VS Code.
+            </li>
+
+            <li>
+                Save the file.
+            </li>
+
+            <li>
+                Right-click the HTML file.
+            </li>
+
+            <li>
+                Select <strong>Open with Live Server</strong>.
+            </li>
+
+            <li>
+                Your webpage will open in the browser.
+            </li>
+
+        </ol>
+
+        <p>
+            Whenever you make changes, save the file and Live Server
+            can refresh the webpage automatically.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ==================== -->
+    <!-- 21. IMPORTANT CONCEPT -->
+    <!-- ==================== -->
+
+    <section>
+
+        <h2>21. How HTML Reaches the Browser</h2>
+
+        <p>
+            When we create an HTML file, the browser reads the HTML code
+            and converts it into the webpage that we see on the screen.
+        </p>
+
+        <p>
+            The browser does not simply display the HTML code as text.
+            Instead, it interprets the HTML elements and builds the
+            webpage structure.
+        </p>
+
+        <p>
+            <strong>
+                HTML Code → Browser → Webpage
+            </strong>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+</main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture 05 - CSS Basics</title>
+
+```
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 40px;
+        background-color: #f4f6f8;
+        color: #222;
+    }
+
+    h1 {
+        color: #1f4e79;
+    }
+
+    h2 {
+        color: #2f6f3e;
+        margin-top: 35px;
+    }
+
+    h3 {
+        color: #444;
+    }
+
+    section {
+        background-color: white;
+        padding: 20px;
+        margin-bottom: 25px;
+        border-radius: 8px;
+    }
+
+    pre {
+        background-color: #222;
+        color: white;
+        padding: 15px;
+        overflow-x: auto;
+        border-radius: 5px;
+    }
+
+    code {
+        color: #c7254e;
+    }
+
+    .example {
+        padding: 15px;
+        background-color: #eef5ff;
+        margin: 10px 0;
+    }
+
+    .highlight {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+```
+<h1>Lecture 05 — CSS Basics</h1>
+
+<section>
+    <h2>1. What is CSS?</h2>
+
+    <p>
+        CSS stands for <strong>Cascading Style Sheets</strong>.
+    </p>
+
+    <p>
+        CSS is used to style and design HTML elements.
+        It controls how a webpage looks.
+    </p>
+
+    <h3>HTML vs CSS</h3>
+
+    <ul>
+        <li><strong>HTML</strong> → Structure of the webpage</li>
+        <li><strong>CSS</strong> → Design and appearance of the webpage</li>
+        <li><strong>JavaScript</strong> → Behavior and functionality</li>
+    </ul>
+
+    <p>For example:</p>
+
+    <pre>
+```
+
+HTML → Creates a heading
+CSS  → Changes its color and size
+JavaScript → Makes it interactive </pre> </section>
+
+```
+<section>
+    <h2>2. Why Do We Use CSS?</h2>
+
+    <p>CSS allows us to:</p>
+
+    <ul>
+        <li>Change text color</li>
+        <li>Change background color</li>
+        <li>Change font size</li>
+        <li>Change font weight</li>
+        <li>Align text</li>
+        <li>Add spacing</li>
+        <li>Add borders</li>
+        <li>Design buttons</li>
+        <li>Create layouts</li>
+        <li>Make websites responsive</li>
+    </ul>
+</section>
+
+
+<section>
+    <h2>3. CSS Syntax</h2>
+
+    <p>The basic CSS syntax is:</p>
+
+    <pre>
+```
+
+selector {
+property: value;
+} </pre>
+
+```
+    <h3>Example</h3>
+
+    <pre>
+```
+
+p {
+color: blue;
+} </pre>
+
+```
+    <p>Here:</p>
+
+    <ul>
+        <li><strong>p</strong> → Selector</li>
+        <li><strong>color</strong> → Property</li>
+        <li><strong>blue</strong> → Value</li>
+    </ul>
+</section>
+
+
+<section>
+    <h2>4. CSS Comments</h2>
+
+    <p>Comments are ignored by the browser.</p>
+
+    <pre>
+```
+
+/* This is a CSS comment */
+
+p {
+color: red;
+} </pre> </section>
+
+```
+<section>
+    <h2>5. Element Selector</h2>
+
+    <p>
+        The element selector selects HTML elements by their tag name.
+    </p>
+
+    <pre>
+```
+
+p {
+color: blue;
+}
+
+h1 {
+color: red;
+}
+
+button {
+background-color: black;
+} </pre>
+
+```
+    <h3>Example</h3>
+
+    <pre>
+```
+
+<h1>Hello Students</h1>
+<p>Welcome to CSS</p> </pre>
+
+```
+    <p>
+        The <code>h1</code> selector selects all h1 elements.
+        The <code>p</code> selector selects all paragraph elements.
+    </p>
+</section>
+
+
+<section>
+    <h2>6. Class Selector</h2>
+
+    <p>
+        A class selector is used when we want to style one or more
+        elements using the same class.
+    </p>
+
+    <p>
+        A class selector starts with a <strong>dot (.)</strong>.
+    </p>
+
+    <pre>
+```
+
+.title {
+color: blue;
+} </pre>
+
+```
+    <h3>HTML</h3>
+
+    <pre>
+```
+
+<h1 class="title">My Website</h1>
+
+<p class="title">Welcome to my website</p> </pre>
+
+```
+    <p>
+        Both elements will receive the same CSS because they have the
+        class <code>title</code>.
+    </p>
+
+    <div class="example">
+        <p class="highlight">This paragraph uses a class selector.</p>
+    </div>
+</section>
+
+
+<section>
+    <h2>7. ID Selector</h2>
+
+    <p>
+        An ID selector is used to target a specific HTML element.
+    </p>
+
+    <p>
+        An ID selector starts with a <strong>#</strong>.
+    </p>
+
+    <pre>
+```
+
+#heading {
+color: green;
+} </pre>
+
+```
+    <h3>HTML</h3>
+
+    <pre>
+```
+
+<h1 id="heading">Welcome</h1> </pre>
+
+```
+    <p>
+        The ID value should normally be unique on a page.
+    </p>
+</section>
+
+
+<section>
+    <h2>8. Class vs ID</h2>
+
+    <pre>
+```
+
+Class → .
+ID    → #
+
+Example:
+
+.box {
+color: blue;
+}
+
+#main-heading {
+color: red;
+} </pre>
+
+```
+    <ul>
+        <li><strong>Class</strong> → Can be reused on multiple elements.</li>
+        <li><strong>ID</strong> → Normally used for one unique element.</li>
+    </ul>
+</section>
+
+
+<section>
+    <h2>9. Inline CSS</h2>
+
+    <p>
+        Inline CSS is written directly inside the HTML element using
+        the <code>style</code> attribute.
+    </p>
+
+    <pre>
+```
+
+<p style="color: red;">
+Hello World
+</p> </pre>
+
+```
+    <p style="color: red;">
+        This paragraph is styled using inline CSS.
+    </p>
+
+    <p>
+        Inline CSS is useful for quick testing, but it is generally
+        not recommended for large projects.
+    </p>
+</section>
+
+
+<section>
+    <h2>10. Internal CSS</h2>
+
+    <p>
+        Internal CSS is written inside the
+        <code>&lt;style&gt;</code> tag in the HTML document's
+        <code>&lt;head&gt;</code>.
+    </p>
+
+    <pre>
+```
+
+<head>
+
+```
+&lt;style&gt;
+
+    p {
+        color: blue;
+    }
+
+&lt;/style&gt;
+```
+
+</head> </pre>
+
+```
+    <p>
+        Internal CSS is useful when styling a single HTML page.
+    </p>
+</section>
+
+
+<section>
+    <h2>11. External CSS</h2>
+
+    <p>
+        External CSS is written in a separate <code>.css</code> file.
+    </p>
+
+    <h3>style.css</h3>
+
+    <pre>
+```
+
+p {
+color: blue;
+}
+
+h1 {
+color: red;
+} </pre>
+
+```
+    <h3>index.html</h3>
+
+    <pre>
+```
+
+<head>
+
+```
+&lt;link rel="stylesheet" href="style.css"&gt;
+```
+
+</head> </pre>
+
+```
+    <p>
+        External CSS is the most commonly used approach for real
+        websites because it keeps HTML and CSS separate.
+    </p>
+</section>
+
+
+<section>
+    <h2>12. CSS Types Comparison</h2>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Type</th>
+            <th>Where?</th>
+            <th>Example</th>
+        </tr>
+
+        <tr>
+            <td>Inline</td>
+            <td>Inside HTML element</td>
+            <td>style="color:red"</td>
+        </tr>
+
+        <tr>
+            <td>Internal</td>
+            <td>Inside &lt;style&gt;</td>
+            <td>style tag</td>
+        </tr>
+
+        <tr>
+            <td>External</td>
+            <td>Separate .css file</td>
+            <td>style.css</td>
+        </tr>
+    </table>
+</section>
+
+
+<section>
+    <h2>13. Basic CSS Properties</h2>
+
+    <h3>Color</h3>
+
+    <pre>
+```
+
+p {
+color: red;
+} </pre>
+
+```
+    <h3>Background Color</h3>
+
+    <pre>
+```
+
+body {
+background-color: lightgray;
+} </pre>
+
+```
+    <h3>Font Size</h3>
+
+    <pre>
+```
+
+h1 {
+font-size: 40px;
+} </pre>
+
+```
+    <h3>Font Weight</h3>
+
+    <pre>
+```
+
+p {
+font-weight: bold;
+} </pre>
+
+```
+    <h3>Text Align</h3>
+
+    <pre>
+```
+
+h1 {
+text-align: center;
+} </pre>
+
+```
+    <h3>Margin</h3>
+
+    <pre>
+```
+
+div {
+margin: 20px;
+} </pre>
+
+```
+    <h3>Padding</h3>
+
+    <pre>
+```
+
+div {
+padding: 20px;
+} </pre> </section>
+
+```
+<section>
+    <h2>14. Multiple CSS Properties</h2>
+
+    <p>
+        We can use multiple properties inside one selector.
+    </p>
+
+    <pre>
+```
+
+h1 {
+color: blue;
+background-color: lightgray;
+font-size: 40px;
+text-align: center;
+} </pre>
+
+```
+    <h1 style="
+        color: blue;
+        background-color: lightgray;
+        font-size: 40px;
+        text-align: center;
+    ">
+        CSS Heading Example
+    </h1>
+</section>
+
+
+<section>
+    <h2>15. Grouping Selectors</h2>
+
+    <p>
+        We can apply the same CSS to multiple elements by separating
+        selectors with commas.
+    </p>
+
+    <pre>
+```
+
+h1, h2, p {
+color: blue;
+} </pre> </section>
+
+```
+<section>
+    <h2>16. Universal Selector</h2>
+
+    <p>
+        The universal selector <code>*</code> selects all HTML elements.
+    </p>
+
+    <pre>
+```
+
+* {
+  margin: 0;
+  padding: 0;
+  } </pre>
+
+  ```
+    <p>
+        This is commonly used to reset default browser spacing.
+    </p>
+  ```
+
+    </section>
+
+    <section>
+        <h2>17. Basic CSS Colors</h2>
+
+  ```
+    <p>CSS supports different ways to define colors.</p>
+
+    <h3>Color Names</h3>
+
+    <pre>
+  ```
+
+color: red;
+color: blue;
+color: green; </pre>
+
+```
+    <h3>Hexadecimal</h3>
+
+    <pre>
+```
+
+color: #ff0000;
+color: #0000ff;
+color: #00ff00; </pre>
+
+```
+    <h3>RGB</h3>
+
+    <pre>
+```
+
+color: rgb(255, 0, 0); </pre>
+
+```
+    <p>
+        For beginners, start with color names and hexadecimal colors.
+    </p>
+</section>
+
+
+<section>
+    <h2>18. CSS Units</h2>
+
+    <p>Some common CSS units are:</p>
+
+    <ul>
+        <li><strong>px</strong> → Pixels</li>
+        <li><strong>%</strong> → Percentage</li>
+        <li><strong>em</strong> → Relative to parent font size</li>
+        <li><strong>rem</strong> → Relative to root font size</li>
+        <li><strong>vh</strong> → Viewport height</li>
+        <li><strong>vw</strong> → Viewport width</li>
+    </ul>
+
+    <p>For now, students should mainly practice with <strong>px</strong>.</p>
+
+    <pre>
+```
+
+h1 {
+font-size: 40px;
+}
+
+div {
+width: 50%;
+} </pre> </section>
+
+```
+<section>
+    <h2>19. CSS Cascade — Basic Idea</h2>
+
+    <p>
+        CSS is called <strong>Cascading</strong> Style Sheets because
+        multiple CSS rules can affect the same element.
+    </p>
+
+    <p>
+        When rules conflict, the browser uses CSS rules such as
+        specificity and source order to determine which style applies.
+    </p>
+
+    <p>
+        For now, remember:
+    </p>
+
+    <pre>
+```
+
+Inline CSS
+↓
+ID selector
+↓
+Class selector
+↓
+Element selector </pre>
+
+```
+    <p>
+        This is only a beginner introduction to specificity.
+        We will study it in more detail later.
+    </p>
+</section>
+
+
+<section>
+    <h2>20. Practical Example</h2>
+
+    <h3>HTML</h3>
+
+    <pre>
+```
+
+<h1 id="title">My Restaurant</h1>
+
+<p class="description">
+Welcome to our restaurant.
+</p>
+
+<button class="btn">
+Order Now
+</button> </pre>
+
+```
+    <h3>CSS</h3>
+
+    <pre>
+```
+
+#title {
+color: darkred;
+text-align: center;
+}
+
+.description {
+color: gray;
+font-size: 18px;
+}
+
+.btn {
+background-color: black;
+color: white;
+padding: 10px 20px;
+} </pre> </section>
+
+
+
+
+
+</body>
+</html>

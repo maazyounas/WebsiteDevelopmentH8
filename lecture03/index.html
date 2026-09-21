@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>Lecture 03 - Basic HTML Tags</title>
+```
+
+</head>
+
+<body>
+
+```
+<header>
+
+    <h1>Web Development - Lecture 03</h1>
+
+    <p>Basic HTML Tags</p>
+
+    <hr>
+
+</header>
+
+
+<main>
+
+    <!-- ================================= -->
+    <!-- 1. INTRODUCTION -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>1. Introduction</h2>
+
+        <p>
+            In the previous lecture, we learned the basic structure of an
+            HTML document and created our first webpage.
+        </p>
+
+        <p>
+            In this lecture, we will learn the basic HTML tags that are
+            commonly used to create webpage content.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 2. HEADINGS -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>2. Heading Tags</h2>
+
+        <p>
+            HTML provides six heading tags, from
+            <strong>&lt;h1&gt;</strong> to
+            <strong>&lt;h6&gt;</strong>.
+        </p>
+
+        <h1>H1 - Main Heading</h1>
+        <h2>H2 - Section Heading</h2>
+        <h3>H3 - Sub Heading</h3>
+        <h4>H4 - Heading</h4>
+        <h5>H5 - Heading</h5>
+        <h6>H6 - Heading</h6>
+
+        <pre>
+```
+
+<h1>Main Heading</h1>
+<h2>Section Heading</h2>
+<h3>Sub Heading</h3> </pre>
+
+```
+        <p>
+            <strong>Important:</strong> The h1 tag is generally used for
+            the main heading of a page or important content.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 3. PARAGRAPH -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>3. Paragraph Tag</h2>
+
+        <p>
+            The <strong>&lt;p&gt;</strong> tag is used to create paragraphs.
+        </p>
+
+        <pre>
+```
+
+<p>
+This is a paragraph.
+</p> </pre>
+
+```
+        <p>
+            This is an example paragraph written on the webpage.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 4. BR -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>4. Line Break - &lt;br&gt;</h2>
+
+        <p>
+            The <strong>&lt;br&gt;</strong> tag is used to move content
+            to a new line.
+        </p>
+
+        <pre>
+```
+
+Hello<br>
+World </pre>
+
+```
+        <p>
+            Hello<br>
+            World
+        </p>
+
+        <p>
+            The <strong>&lt;br&gt;</strong> tag does not require a closing tag.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 5. HR -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>5. Horizontal Rule - &lt;hr&gt;</h2>
+
+        <p>
+            The <strong>&lt;hr&gt;</strong> tag creates a horizontal line
+            that can be used to separate sections of content.
+        </p>
+
+        <hr>
+
+        <pre>
+```
+
+<hr> </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 6. LINKS -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>6. Link / Anchor Tag</h2>
+
+        <p>
+            The <strong>&lt;a&gt;</strong> tag is used to create hyperlinks.
+        </p>
+
+        <pre>
+```
+
+<a href="https://www.google.com">
+Visit Google
+</a> </pre>
+
+```
+        <p>
+            <a href="https://www.google.com">
+                Visit Google
+            </a>
+        </p>
+
+        <p>
+            The <strong>href</strong> attribute specifies where the
+            link should take the user.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 7. IMAGES -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>7. Image Tag</h2>
+
+        <p>
+            The <strong>&lt;img&gt;</strong> tag is used to display images
+            on a webpage.
+        </p>
+
+        <pre>
+```
+
+<img src="image.jpg" alt="Description of image"> </pre>
+
+```
+        <p>
+            Important attributes:
+        </p>
+
+        <ul>
+
+            <li>
+                <strong>src</strong> - Specifies the image location.
+            </li>
+
+            <li>
+                <strong>alt</strong> - Provides alternative text for the image.
+            </li>
+
+            <li>
+                <strong>width</strong> - Specifies the image width.
+            </li>
+
+            <li>
+                <strong>height</strong> - Specifies the image height.
+            </li>
+
+        </ul>
+
+        <p>
+            The <strong>&lt;img&gt;</strong> tag does not require a closing tag.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 8. UNORDERED LIST -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>8. Unordered List</h2>
+
+        <p>
+            The <strong>&lt;ul&gt;</strong> tag creates an unordered list.
+        </p>
+
+        <p>
+            Each item is written using the
+            <strong>&lt;li&gt;</strong> tag.
+        </p>
+
+        <pre>
+```
+
+<ul>
+
+```
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+```
+
+</ul> </pre>
+
+```
+        <h3>Example:</h3>
+
+        <ul>
+
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 9. ORDERED LIST -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>9. Ordered List</h2>
+
+        <p>
+            The <strong>&lt;ol&gt;</strong> tag creates an ordered list.
+        </p>
+
+        <pre>
+```
+
+<ol>
+
+```
+&lt;li&gt;HTML&lt;/li&gt;
+&lt;li&gt;CSS&lt;/li&gt;
+&lt;li&gt;JavaScript&lt;/li&gt;
+```
+
+</ol> </pre>
+
+```
+        <h3>Example:</h3>
+
+        <ol>
+
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+
+        </ol>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 10. NESTED LIST -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>10. Nested Lists</h2>
+
+        <p>
+            A list can contain another list inside it.
+            This is called a nested list.
+        </p>
+
+        <pre>
+```
+
+<ul>
+
+```
+&lt;li&gt;
+    Frontend
+    &lt;ul&gt;
+        &lt;li&gt;HTML&lt;/li&gt;
+        &lt;li&gt;CSS&lt;/li&gt;
+        &lt;li&gt;JavaScript&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/li&gt;
+```
+
+</ul> </pre>
+
+```
+        <h3>Example:</h3>
+
+        <ul>
+
+            <li>
+                Frontend
+
+                <ul>
+
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+
+                </ul>
+
+            </li>
+
+            <li>
+                Backend
+
+                <ul>
+
+                    <li>Node.js</li>
+                    <li>Python</li>
+                    <li>PHP</li>
+
+                </ul>
+
+            </li>
+
+        </ul>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 11. STRONG -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>11. Strong Tag</h2>
+
+        <p>
+            The <strong>&lt;strong&gt;</strong> tag indicates that
+            the text has strong importance.
+        </p>
+
+        <pre>
+```
+
+<strong>Important Text</strong> </pre>
+
+```
+        <p>
+            <strong>This is important text.</strong>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 12. BOLD -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>12. Bold Tag</h2>
+
+        <p>
+            The <strong>&lt;b&gt;</strong> tag is used to draw attention
+            to text without adding the same semantic importance as
+            <strong>&lt;strong&gt;</strong>.
+        </p>
+
+        <pre>
+```
+
+<b>Bold Text</b> </pre>
+
+```
+        <p>
+            <b>This is bold text.</b>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 13. EM -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>13. Emphasis Tag</h2>
+
+        <p>
+            The <strong>&lt;em&gt;</strong> tag is used to emphasize text.
+        </p>
+
+        <pre>
+```
+
+<em>Important Word</em> </pre>
+
+```
+        <p>
+            This is <em>important</em> text.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 14. ITALIC -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>14. Italic Tag</h2>
+
+        <p>
+            The <strong>&lt;i&gt;</strong> tag displays text in an
+            italic style.
+        </p>
+
+        <pre>
+```
+
+<i>Italic Text</i> </pre>
+
+```
+        <p>
+            <i>This is italic text.</i>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 15. UNDERLINE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>15. Underline Tag</h2>
+
+        <p>
+            The <strong>&lt;u&gt;</strong> tag underlines text.
+        </p>
+
+        <pre>
+```
+
+<u>Underlined Text</u> </pre>
+
+```
+        <p>
+            <u>This is underlined text.</u>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 16. MARK -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>16. Mark Tag</h2>
+
+        <p>
+            The <strong>&lt;mark&gt;</strong> tag highlights text.
+        </p>
+
+        <pre>
+```
+
+<mark>Highlighted Text</mark> </pre>
+
+```
+        <p>
+            This is <mark>highlighted text.</mark>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 17. SMALL -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>17. Small Tag</h2>
+
+        <p>
+            The <strong>&lt;small&gt;</strong> tag represents smaller text.
+        </p>
+
+        <pre>
+```
+
+<small>Small Text</small> </pre>
+
+```
+        <p>
+            <small>This is small text.</small>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 18. DEL -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>18. Deleted Text - &lt;del&gt;</h2>
+
+        <p>
+            The <strong>&lt;del&gt;</strong> tag represents deleted
+            or removed text.
+        </p>
+
+        <pre>
+```
+
+<del>Old Price</del> </pre>
+
+```
+        <p>
+            <del>Rs. 2,000</del>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 19. INS -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>19. Inserted Text - &lt;ins&gt;</h2>
+
+        <p>
+            The <strong>&lt;ins&gt;</strong> tag represents inserted
+            or added text.
+        </p>
+
+        <pre>
+```
+
+<ins>New Price</ins> </pre>
+
+```
+        <p>
+            <ins>Rs. 1,500</ins>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 20. SUBSCRIPT -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>20. Subscript - &lt;sub&gt;</h2>
+
+        <p>
+            The <strong>&lt;sub&gt;</strong> tag displays text slightly
+            below the normal line.
+        </p>
+
+        <pre>
+```
+
+H<sub>2</sub>O </pre>
+
+```
+        <p>
+            H<sub>2</sub>O
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 21. SUPERSCRIPT -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>21. Superscript - &lt;sup&gt;</h2>
+
+        <p>
+            The <strong>&lt;sup&gt;</strong> tag displays text slightly
+            above the normal line.
+        </p>
+
+        <pre>
+```
+
+x<sup>2</sup> </pre>
+
+```
+        <p>
+            x<sup>2</sup>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 22. DIV -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>22. Div Tag</h2>
+
+        <p>
+            The <strong>&lt;div&gt;</strong> tag is a general container
+            used to group HTML elements together.
+        </p>
+
+        <pre>
+```
+
+<div>
+
+```
+&lt;h2&gt;About Us&lt;/h2&gt;
+
+&lt;p&gt;
+    This is our website.
+&lt;/p&gt;
+```
+
+</div> </pre>
+
+```
+        <p>
+            Div elements become especially useful when we start learning CSS.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 23. SPAN -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>23. Span Tag</h2>
+
+        <p>
+            The <strong>&lt;span&gt;</strong> tag is an inline container
+            commonly used to group or target a small part of text or
+            other inline content.
+        </p>
+
+        <pre>
+```
+
+<p>
+This is
+<span>important</span>
+text.
+</p> </pre>
+
+```
+        <p>
+            This is
+            <span>important</span>
+            text.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 24. TABLE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>24. Basic Table Tags</h2>
+
+        <p>
+            HTML provides several tags for creating tables.
+        </p>
+
+        <ul>
+
+            <li><strong>&lt;table&gt;</strong> - Creates the table.</li>
+
+            <li><strong>&lt;tr&gt;</strong> - Creates a table row.</li>
+
+            <li><strong>&lt;th&gt;</strong> - Creates a table heading.</li>
+
+            <li><strong>&lt;td&gt;</strong> - Creates a table data cell.</li>
+
+        </ul>
+
+        <pre>
+```
+
+<table border="1">
+
+```
+&lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+    &lt;td&gt;Ali&lt;/td&gt;
+    &lt;td&gt;20&lt;/td&gt;
+&lt;/tr&gt;
+```
+
+</table> </pre>
+
+```
+        <h3>Example:</h3>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Ali</td>
+                <td>20</td>
+                <td>Web Development</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Ahmed</td>
+                <td>21</td>
+                <td>Computer Science</td>
+
+            </tr>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 25. BUTTON -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>25. Button Tag</h2>
+
+        <p>
+            The <strong>&lt;button&gt;</strong> tag creates a clickable button.
+        </p>
+
+        <pre>
+```
+
+<button>
+Click Me
+</button> </pre>
+
+```
+        <button>
+            Click Me
+        </button>
+
+        <p>
+            Buttons become more useful when combined with CSS and JavaScript.
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 26. QUOTATION -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>26. Quotation Tags</h2>
+
+        <h3>Blockquote</h3>
+
+        <p>
+            The <strong>&lt;blockquote&gt;</strong> tag is used for
+            longer quotations.
+        </p>
+
+        <blockquote>
+            The future belongs to those who learn and keep building.
+        </blockquote>
+
+        <h3>Short Quote</h3>
+
+        <p>
+            The <strong>&lt;q&gt;</strong> tag is used for a short quotation.
+        </p>
+
+        <p>
+            He said, <q>Keep learning.</q>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 27. PRE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>27. Preformatted Text</h2>
+
+        <p>
+            The <strong>&lt;pre&gt;</strong> tag displays text while
+            preserving spaces and line breaks.
+        </p>
+
+        <pre>
+```
+
+This is
+preformatted
+text. </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 28. CODE -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>28. Code Tag</h2>
+
+        <p>
+            The <strong>&lt;code&gt;</strong> tag is used to represent
+            a piece of computer code.
+        </p>
+
+        <p>
+            Example:
+            <code>console.log("Hello World");</code>
+        </p>
+
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 29. HTML COMMENTS -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>29. HTML Comments</h2>
+
+        <p>
+            Comments are used to write notes inside HTML code.
+            They are not displayed on the webpage.
+        </p>
+
+        <pre>
+```
+
+<!-- This is a comment --> </pre>
+
+```
+    </section>
+
+    <hr>
+
+
+    <!-- ================================= -->
+    <!-- 30. COMMON TAGS SUMMARY -->
+    <!-- ================================= -->
+
+    <section>
+
+        <h2>30. Common HTML Tags Summary</h2>
+
+        <table border="1" cellpadding="8">
+
+            <tr>
+
+                <th>Tag</th>
+                <th>Purpose</th>
+
+            </tr>
+
+            <tr>
+                <td>&lt;h1&gt; - &lt;h6&gt;</td>
+                <td>Headings</td>
+            </tr>
+
+            <tr>
+                <td>&lt;p&gt;</td>
+                <td>Paragraph</td>
+            </tr>
+
+            <tr>
+                <td>&lt;br&gt;</td>
+                <td>Line break</td>
+            </tr>
+
+            <tr>
+                <td>&lt;hr&gt;</td>
+                <td>Horizontal line / thematic break</td>
+            </tr>
+
+            <tr>
+                <td>&lt;a&gt;</td>
+                <td>Link</td>
+            </tr>
+
+            <tr>
+                <td>&lt;img&gt;</td>
+                <td>Image</td>
+            </tr>
+
+            <tr>
+                <td>&lt;ul&gt;</td>
+                <td>Unordered list</td>
+            </tr>
+
+            <tr>
+                <td>&lt;ol&gt;</td>
+                <td>Ordered list</td>
+            </tr>
+
+            <tr>
+                <td>&lt;li&gt;</td>
+                <td>List item</td>
+            </tr>
+
+            <tr>
+                <td>&lt;div&gt;</td>
+                <td>Block-level container</td>
+            </tr>
+
+            <tr>
+                <td>&lt;span&gt;</td>
+                <td>Inline container</td>
+            </tr>
+
+            <tr>
+                <td>&lt;table&gt;</td>
+                <td>Table</td>
+            </tr>
+
+            <tr>
+                <td>&lt;tr&gt;</td>
+                <td>Table row</td>
+            </tr>
+
+            <tr>
+                <td>&lt;th&gt;</td>
+                <td>Table heading</td>
+            </tr>
+
+            <tr>
+                <td>&lt;td&gt;</td>
+                <td>Table data</td>
+            </tr>
+
+            <tr>
+                <td>&lt;button&gt;</td>
+                <td>Button</td>
+            </tr>
+
+            <tr>
+                <td>&lt;strong&gt;</td>
+                <td>Strong importance</td>
+            </tr>
+
+            <tr>
+                <td>&lt;em&gt;</td>
+                <td>Emphasized text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;b&gt;</td>
+                <td>Bold text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;i&gt;</td>
+                <td>Italic text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;u&gt;</td>
+                <td>Underlined text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;mark&gt;</td>
+                <td>Highlighted text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;small&gt;</td>
+                <td>Smaller text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;del&gt;</td>
+                <td>Deleted text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;ins&gt;</td>
+                <td>Inserted text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;sub&gt;</td>
+                <td>Subscript</td>
+            </tr>
+
+            <tr>
+                <td>&lt;sup&gt;</td>
+                <td>Superscript</td>
+            </tr>
+
+            <tr>
+                <td>&lt;pre&gt;</td>
+                <td>Preformatted text</td>
+            </tr>
+
+            <tr>
+                <td>&lt;code&gt;</td>
+                <td>Computer code</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <hr>
+
+</main>
+
+</body>
+
+</html>
