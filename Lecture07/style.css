@@ -1,0 +1,130 @@
+/* =========================
+GENERAL STYLING
+========================= */
+
+body {
+font-family: Arial, sans-serif;
+margin: 30px;
+background-color: #f4f4f4;
+}
+
+h1 {
+text-align: center;
+color: #1f4e79;
+}
+
+h2 {
+color: #333;
+}
+
+section {
+background-color: white;
+padding: 20px;
+margin-bottom: 25px;
+}
+
+/* =========================
+
+1. DISPLAY BLOCK
+   ========================= */
+
+.block-box {
+display: block;
+
+
+width: 200px;
+height: 50px;
+
+background-color: lightblue;
+
+margin-bottom: 10px;
+padding: 10px;
+
+
+}
+
+/* =========================
+2. DISPLAY INLINE
+========================= */
+
+.inline-box {
+display: inline;
+
+
+width: 200px;
+height: 50px;
+
+background-color: lightgreen;
+
+padding: 10px;
+margin-right: 10px;
+
+
+}
+
+/* =========================
+3. DISPLAY INLINE-BLOCK
+========================= */
+
+.inline-block-box {
+display: inline-block;
+
+
+width: 200px;
+height: 50px;
+
+background-color: lightcoral;
+
+padding: 10px;
+margin-right: 10px;
+
+
+}
+
+/* =========================
+4. DISPLAY NONE
+========================= */
+
+.visible-box {
+display: block;
+
+
+background-color: lightblue;
+
+padding: 15px;
+margin-bottom: 10px;
+
+
+}
+
+.none-box {
+display: none;
+
+
+background-color: red;
+
+padding: 20px;
+
+
+}
+
+/* =========================
+COMPARISON TABLE
+========================= */
+
+table {
+width: 100%;
+border-collapse: collapse;
+}
+
+th,
+td {
+border: 1px solid #333;
+padding: 10px;
+text-align: center;
+}
+
+th {
+background-color: #333;
+color: white;
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    
+    <title>CSS Display Properties</title>
+
+    <link rel="stylesheet" href="style.css" />
+    
+  </head>
+
+  <body>
+    
+    <h1>CSS Display Properties</h1>
+
+    <p>In this practice, we will learn the difference between:</p>
+
+    <ul>
+      <li>display: block;</li>
+      <li>display: inline;</li>
+      <li>display: inline-block;</li>
+      <li>display: none;</li>
+    </ul>
+
+
+    <section>
+      <h2>1. display: block;</h2>
+
+      <p>
+        Block elements start on a new line and take the full available width.
+      </p>
+
+      <div class="block-box">Block Box 1</div>
+      <div class="block-box">Block Box 2</div>
+      <div class="block-box">Block Box 3</div>
+    </section>
+
+
+    <section>
+      <h2>2. display: inline;</h2>
+
+      <p>
+        Inline elements stay on the same line and only take the space required
+        by their content.
+      </p>
+
+      <span class="inline-box">Inline 1</span>
+      <span class="inline-box">Inline 2</span>
+      <span class="inline-box">Inline 3</span>
+    </section>
+
+
+    <section>
+      <h2>3. display: inline-block;</h2>
+
+      <p>
+        Inline-block elements stay on the same line but allow us to set width
+        and height.
+      </p>
+
+      <div class="inline-block-box">Inline-Block 1</div>
+      <div class="inline-block-box">Inline-Block 2</div>
+      <div class="inline-block-box">Inline-Block 3</div>
+    </section>
+
+    <section>
+      <h2>4. display: none;</h2>
+
+      <p>An element with display: none is completely removed from the page.</p>
+
+      <div class="visible-box">I am visible</div>
+
+      <div class="none-box">You cannot see me!</div>
+
+      <div class="visible-box">I am visible after the hidden element</div>
+    </section>
+
+
+    <section>
+      <h2>Quick Comparison</h2>
+
+      <table>
+        <tr>
+          <th>Display</th>
+          <th>New Line?</th>
+          <th>Width / Height?</th>
+        </tr>
+
+        <tr>
+          <td>block</td>
+          <td>Yes</td>
+          <td>Yes</td>
+        </tr>
+
+        <tr>
+          <td>inline</td>
+          <td>No</td>
+          <td>Limited</td>
+        </tr>
+
+        <tr>
+          <td>inline-block</td>
+          <td>No</td>
+          <td>Yes</td>
+        </tr>
+
+        <tr>
+          <td>none</td>
+          <td>Not displayed</td>
+          <td>Not visible</td>
+        </tr>
+      </table>
+    </section>
+    
+  </body>
+</html>
