@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>CSS Position & Flexbox</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- =========================
+     HEADER
+========================== -->
+
+<header class="header">
+    <h1>CSS Position & Flexbox</h1>
+
+    <p>
+        Today's lecture covers CSS positioning and Flexbox properties.
+    </p>
+</header>
+
+
+<!-- =========================
+     POSITION
+========================== -->
+
+<section>
+
+    <h2>Part 1 — CSS Position</h2>
+
+    <p>
+        CSS position controls how an element is positioned on a webpage.
+    </p>
+
+
+    <!-- Static -->
+
+    <div class="position-demo">
+
+        <h3>1. position: static;</h3>
+
+        <div class="static-box">
+            Static
+        </div>
+
+        <p>
+            Static is the default position of an element.
+        </p>
+
+    </div>
+
+
+    <!-- Relative -->
+
+    <div class="position-demo">
+
+        <h3>2. position: relative;</h3>
+
+        <div class="relative-box">
+            Relative
+        </div>
+
+        <p>
+            The element stays in its normal position but can be moved
+            using top, right, bottom or left.
+        </p>
+
+    </div>
+
+
+    <!-- Absolute -->
+
+    <div class="position-demo">
+
+        <h3>3. position: absolute;</h3>
+
+        <div class="absolute-parent">
+
+            <div class="absolute-box">
+                Absolute
+            </div>
+
+        </div>
+
+        <p>
+            The absolute element is positioned relative to its nearest
+            positioned parent.
+        </p>
+
+    </div>
+
+
+    <!-- Fixed -->
+
+    <div class="position-demo">
+
+        <h3>4. position: fixed;</h3>
+
+        <p>
+            Scroll the page and notice the small button in the
+            bottom-right corner.
+        </p>
+
+    </div>
+
+
+    <!-- Sticky -->
+
+    <div class="position-demo">
+
+        <h3>5. position: sticky;</h3>
+
+        <div class="sticky-box">
+            I am Sticky
+        </div>
+
+        <p>
+            Scroll the page to see how the sticky element behaves.
+        </p>
+
+        <p>
+            Sticky starts like a normal element and sticks to a position
+            when the specified scroll point is reached.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     TOP RIGHT BOTTOM LEFT
+========================== -->
+
+<section>
+
+    <h2>Position Properties</h2>
+
+    <p>
+        The following properties are used to move positioned elements.
+    </p>
+
+    <ul>
+        <li>top</li>
+        <li>right</li>
+        <li>bottom</li>
+        <li>left</li>
+        <li>z-index</li>
+    </ul>
+
+    <div class="position-example">
+        This box demonstrates top and left.
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FLEXBOX
+========================== -->
+
+<section>
+
+    <h2>Part 2 — CSS Flexbox</h2>
+
+    <p>
+        Flexbox is used to arrange elements in rows or columns.
+    </p>
+
+
+    <!-- Flex Direction -->
+
+    <div class="flex-demo">
+
+        <h3>1. flex-direction</h3>
+
+        <p>
+            Controls the direction of flex items.
+        </p>
+
+        <div class="direction-container">
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Justify Content -->
+
+    <div class="flex-demo">
+
+        <h3>2. justify-content</h3>
+
+        <p>
+            Aligns items along the main axis.
+        </p>
+
+        <div class="justify-container">
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Align Items -->
+
+    <div class="flex-demo">
+
+        <h3>3. align-items</h3>
+
+        <p>
+            Aligns items along the cross axis.
+        </p>
+
+        <div class="align-container">
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Flex Wrap -->
+
+    <div class="flex-demo">
+
+        <h3>4. flex-wrap</h3>
+
+        <p>
+            Allows flex items to move to multiple lines.
+        </p>
+
+        <div class="wrap-container">
+
+            <div>Box 1</div>
+            <div>Box 2</div>
+            <div>Box 3</div>
+            <div>Box 4</div>
+            <div>Box 5</div>
+            <div>Box 6</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Gap -->
+
+    <div class="flex-demo">
+
+        <h3>5. gap</h3>
+
+        <p>
+            Creates space between flex items.
+        </p>
+
+        <div class="gap-container">
+
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Flex Grow -->
+
+    <div class="flex-demo">
+
+        <h3>6. flex-grow</h3>
+
+        <p>
+            Defines how much an item can grow when extra space is available.
+        </p>
+
+        <div class="grow-container">
+
+            <div class="grow-one">Grow 1</div>
+            <div class="grow-two">Grow 2</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Flex Shrink -->
+
+    <div class="flex-demo">
+
+        <h3>7. flex-shrink</h3>
+
+        <p>
+            Defines how much an item can shrink when there is not enough space.
+        </p>
+
+        <div class="shrink-container">
+
+            <div class="shrink-one">Shrink 1</div>
+            <div class="shrink-two">Shrink 2</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Flex Basis -->
+
+    <div class="flex-demo">
+
+        <h3>8. flex-basis</h3>
+
+        <p>
+            Defines the initial size of a flex item.
+        </p>
+
+        <div class="basis-container">
+
+            <div>Box 1</div>
+            <div>Box 2</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Flex -->
+
+    <div class="flex-demo">
+
+        <h3>9. flex</h3>
+
+        <p>
+            Flex is a shorthand for flex-grow, flex-shrink and flex-basis.
+        </p>
+
+        <div class="flex-container">
+
+            <div>Box 1</div>
+            <div>Box 2</div>
+            <div>Box 3</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Align Self -->
+
+    <div class="flex-demo">
+
+        <h3>10. align-self</h3>
+
+        <p>
+            Allows one flex item to have a different cross-axis alignment.
+        </p>
+
+        <div class="self-container">
+
+            <div>1</div>
+            <div class="self-item">2</div>
+            <div>3</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Order -->
+
+    <div class="flex-demo">
+
+        <h3>11. order</h3>
+
+        <p>
+            Controls the display order of individual flex items.
+        </p>
+
+        <div class="order-container">
+
+            <div class="order-one">1</div>
+            <div class="order-two">2</div>
+            <div class="order-three">3</div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- Fixed Element -->
+
+<div class="fixed-box">
+    Fixed
+</div>
+```
+
+</body>
+
+</html>

@@ -1,0 +1,475 @@
+
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+background-color: #f4f4f4;
+color: #222;
+}
+
+header {
+background-color: #222;
+color: white;
+text-align: center;
+padding: 30px;
+}
+
+section {
+background-color: white;
+margin: 30px;
+padding: 25px;
+}
+
+h2 {
+color: #1f4e79;
+}
+
+h3 {
+color: #444;
+}
+
+/* =========================
+POSITION
+========================= */
+
+.position-demo {
+border: 1px solid #ccc;
+padding: 20px;
+margin-bottom: 25px;
+}
+
+/* Static */
+
+.static-box {
+position: static;
+
+
+background-color: lightblue;
+
+padding: 20px;
+width: 150px;
+
+
+}
+
+/* Relative */
+
+.relative-box {
+position: relative;
+
+
+top: 20px;
+left: 30px;
+
+background-color: lightgreen;
+
+padding: 20px;
+width: 150px;
+
+
+}
+
+/* Absolute */
+
+.absolute-parent {
+position: relative;
+
+
+height: 150px;
+
+background-color: #eeeeee;
+border: 2px solid #aaa;
+
+}
+
+.absolute-box {
+position: absolute;
+
+
+top: 30px;
+right: 30px;
+
+background-color: lightcoral;
+
+padding: 20px;
+
+
+}
+
+/* Fixed */
+
+.fixed-box {
+position: fixed;
+
+
+right: 20px;
+bottom: 20px;
+
+background-color: black;
+color: white;
+
+padding: 15px 20px;
+
+}
+
+/* Sticky */
+
+.sticky-box {
+position: sticky;
+
+top: 0;
+
+background-color: orange;
+
+padding: 15px;
+
+text-align: center;
+
+}
+
+/* =========================
+TOP / LEFT / RIGHT
+========================= */
+
+.position-example {
+position: relative;
+
+
+top: 20px;
+left: 30px;
+
+background-color: lightblue;
+
+padding: 20px;
+
+width: 200px;
+
+}
+
+/* =========================
+FLEXBOX GENERAL
+========================= */
+
+.flex-demo {
+border: 1px solid #ccc;
+
+
+padding: 20px;
+
+margin-bottom: 30px;
+
+
+}
+
+/* =========================
+FLEX DIRECTION
+========================= */
+
+.direction-container {
+display: flex;
+
+
+flex-direction: row;
+
+gap: 10px;
+
+
+}
+
+.direction-container div {
+background-color: lightblue;
+padding: 20px;
+
+
+}
+
+/* =========================
+JUSTIFY CONTENT
+========================= */
+
+.justify-container {
+display: flex;
+
+
+justify-content: space-between;
+
+background-color: #eeeeee;
+
+padding: 20px;
+
+
+}
+
+.justify-container div {
+background-color: lightgreen;
+
+
+padding: 20px;
+
+
+}
+
+/* =========================
+ALIGN ITEMS
+========================= */
+
+.align-container {
+display: flex;
+
+
+align-items: center;
+
+height: 150px;
+
+background-color: #eeeeee;
+
+gap: 50px;
+
+
+}
+
+.align-container div {
+background-color: lightcoral;
+
+
+padding: 20px;
+
+
+}
+
+/* =========================
+FLEX WRAP
+========================= */
+
+.wrap-container {
+display: flex;
+
+
+flex-wrap: wrap;
+
+gap: 10px;
+
+width: 500px;
+
+}
+
+.wrap-container div {
+background-color: lightblue;
+
+padding: 20px;
+
+width: 120px;
+
+}
+
+/* =========================
+GAP
+========================= */
+
+.gap-container {
+display: flex;
+
+gap: 30px;
+
+}
+
+.gap-container div {
+background-color: lightgreen;
+
+
+padding: 20px;
+
+
+}
+
+/* =========================
+FLEX GROW
+========================= */
+
+.grow-container {
+display: flex;
+
+width: 100%;
+
+
+}
+
+.grow-container div {
+padding: 20px;
+}
+
+.grow-one {
+flex-grow: 1;
+
+background-color: lightblue;
+
+
+}
+
+.grow-two {
+flex-grow: 2;
+
+background-color: lightcoral;
+
+
+}
+
+/* =========================
+FLEX SHRINK
+========================= */
+
+.shrink-container {
+display: flex;
+
+
+width: 400px;
+
+border: 2px solid #333;
+
+
+}
+
+.shrink-container div {
+width: 300px;
+
+padding: 20px;
+
+
+}
+
+.shrink-one {
+flex-shrink: 1;
+
+
+background-color: lightblue;
+
+
+}
+
+.shrink-two {
+flex-shrink: 2;
+
+
+background-color: lightcoral;
+
+
+}
+
+/* =========================
+FLEX BASIS
+========================= */
+
+.basis-container {
+display: flex;
+
+
+gap: 10px;
+
+
+}
+
+.basis-container div {
+flex-basis: 200px;
+
+
+background-color: lightgreen;
+
+padding: 20px;
+
+
+}
+
+/* =========================
+FLEX SHORTHAND
+========================= */
+
+.flex-container {
+display: flex;
+
+
+gap: 10px;
+
+
+}
+
+.flex-container div {
+flex: 1;
+
+
+background-color: lightblue;
+
+padding: 20px;
+
+text-align: center;
+
+
+}
+
+/* =========================
+ALIGN SELF
+========================= */
+
+.self-container {
+display: flex;
+
+
+align-items: flex-start;
+
+height: 180px;
+
+gap: 10px;
+
+
+}
+
+.self-container div {
+background-color: lightblue;
+
+
+padding: 20px;
+
+
+}
+
+.self-container .self-item {
+align-self: flex-end;
+
+
+background-color: lightcoral;
+
+
+}
+
+/* =========================
+ORDER
+========================= */
+
+.order-container {
+display: flex;
+
+
+gap: 10px;
+
+
+}
+
+.order-container div {
+background-color: lightgreen;
+
+
+padding: 20px;
+
+
+}
+
+.order-one {
+order: 3;
+}
+
+.order-two {
+order: 1;
+}
+
+.order-three {
+order: 2;
+}
+
