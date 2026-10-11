@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Operators — Lesson</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">JAVASCRIPT BASICS</p>
+      <h1>JavaScript Operators</h1>
+      <p>
+        Learn what operators do, read examples, and try the interactive
+        playground.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="intro panel">
+        <h2>What is an operator?</h2>
+        <p>
+          An <strong>operator</strong> is a symbol or keyword that performs an
+          action on values. For example, <code>+</code> adds numbers or joins
+          strings, while <code>===</code> checks whether two values are equal
+          without converting their types.
+        </p>
+        <p class="note">
+          <strong>Teaching tip:</strong> Ask students to predict each result
+          before revealing it in the browser console or the examples below.
+        </p>
+      </section>
+
+      <section class="lesson-grid">
+        <article class="panel">
+          <h2>1. Logical operators</h2>
+          <p>Combine or reverse Boolean conditions.</p>
+          <ul>
+            <li>
+              <code>&amp;&amp;</code> (AND): true only when both sides are
+              truthy.
+            </li>
+            <li>
+              <code>||</code> (OR): true when at least one side is truthy.
+            </li>
+            <li>
+              <code>!</code> (NOT): converts a value to Boolean and reverses it.
+            </li>
+          </ul>
+          <pre><code>const age = 20;
+const hasID = true;
+
+age >= 18 && hasID; // true
+age &lt; 18 || hasID; // true
+!hasID;             // false</code></pre>
+          <p class="note">
+            These operators can return one of their operands, not always a
+            Boolean. They also short-circuit: the right side may not run if the
+            result is already known.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>2. Increment and decrement</h2>
+          <p><code>++</code> adds 1; <code>--</code> subtracts 1.</p>
+          <pre><code>let score = 4;
+score++; // score is now 5
+score--; // score is now 4</code></pre>
+          <p>
+            <code>count++</code> (postfix) gives the old value in an expression;
+            <code>++count</code> (prefix) gives the updated value.
+          </p>
+          <pre><code>let count = 5;
+console.log(count++); // 5, then count becomes 6
+console.log(++count); // 7</code></pre>
+          <p class="note">
+            They are commonly used with numeric variables. The variable must be
+            assignable, such as a <code>let</code> variable.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>3. String concatenation &amp; template literals</h2>
+          <p>
+            Concatenation joins strings. Template literals use backticks and
+            <code>${...}</code> to insert values.
+          </p>
+          <pre><code>const first = "Maaz";
+const last = "Younas";
+
+const fullName = first + " " + last;
+const message = `Hello, ${fullName}!`;
+
+console.log(fullName); // Maaz Younas
+console.log(message);  // Hello, Maaz Younas!</code></pre>
+          <p class="note">
+            If one operand of <code>+</code> is a string, JavaScript often
+            converts the other value to a string. Use template literals for
+            readable messages.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>4. Operator precedence</h2>
+          <p>
+            Precedence determines which operation is evaluated first.
+            Parentheses can make the order clear.
+          </p>
+          <pre><code>const result1 = 2 + 3 * 4;   // 14
+const result2 = (2 + 3) * 4; // 20
+const result3 = 10 - 4 / 2;  // 8</code></pre>
+          <p>
+            Multiplication and division happen before addition and subtraction.
+            When in doubt, use parentheses instead of relying on memory.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>5. Ternary operator</h2>
+          <p>
+            A compact way to choose one of two expressions based on a condition.
+          </p>
+          <pre><code>const age = 17;
+const access = age >= 18 ? "Allowed" : "Not allowed";
+
+console.log(access); // Not allowed</code></pre>
+          <p>
+            Read it as: <em>condition ? value if true : value if false</em>. For
+            complicated decisions, use <code>if...else</code> for readability.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>6. Arithmetic operators</h2>
+          <ul>
+            <li><code>+</code> addition</li>
+            <li><code>-</code> subtraction</li>
+            <li><code>*</code> multiplication</li>
+            <li><code>/</code> division</li>
+            <li><code>%</code> remainder after division</li>
+            <li><code>**</code> exponentiation (power)</li>
+          </ul>
+          <pre><code>10 + 3; // 13
+10 - 3; // 7
+10 * 3; // 30
+10 / 3; // 3.333...
+10 % 3; // 1
+2 ** 3; // 8</code></pre>
+          <p class="note">
+            The remainder operator is useful for checking even numbers:
+            <code>number % 2 === 0</code>.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>7. Assignment operators</h2>
+          <p>Assign a value or update a variable using its current value.</p>
+          <pre><code>let total = 10; // = assign
+total += 5;     // same as total = total + 5
+total -= 2;     // same as total = total - 2
+total *= 3;     // same as total = total * 3
+total /= 2;     // same as total = total / 2
+
+console.log(total); // 19.5</code></pre>
+          <p class="note">
+            <code>=</code> assigns a value. It does not test equality; use
+            <code>===</code> to compare values and types.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>8. Comparison operators</h2>
+          <p>
+            Comparison operators produce a Boolean result: <code>true</code> or
+            <code>false</code>.
+          </p>
+          <pre><code>5 == "5";   // true (converts types)
+5 === "5";  // false (type differs)
+5 != "6";   // true (converts types)
+5 !== "5";  // true
+5 > 3;      // true
+5 < 3;      // false
+5 >= 5;     // true
+4 <= 3;     // false</code></pre>
+          <p class="note">
+            Prefer <code>===</code> and <code>!==</code> in most code because
+            they avoid unexpected type conversion.
+          </p>
+        </article>
+      </section>
+
+      <section class="panel playground">
+        <h2>Try it: interactive operator playground</h2>
+        <p>
+          Change the values and choose an operation to see the result. This
+          small demo uses the operators from the lesson.
+        </p>
+        <div class="controls">
+          <label
+            >First value
+            <input id="firstValue" type="number" value="10" step="any" />
+          </label>
+          <label
+            >Second value
+            <input id="secondValue" type="number" value="3" step="any" />
+          </label>
+          <label
+            >Operation
+            <select id="operation">
+              <option value="add">Addition (+)</option>
+              <option value="subtract">Subtraction (-)</option>
+              <option value="multiply">Multiplication (*)</option>
+              <option value="divide">Division (/)</option>
+              <option value="remainder">Remainder (%)</option>
+              <option value="power">Power (**)</option>
+              <option value="equal">Loose equality (==)</option>
+              <option value="strictEqual">Strict equality (===)</option>
+              <option value="greater">Greater than (&gt;)</option>
+              <option value="and">Logical AND (&amp;&amp;)</option>
+              <option value="or">Logical OR (||)</option>
+            </select>
+          </label>
+          <button id="calculateButton" type="button">Calculate</button>
+        </div>
+        <div class="result" aria-live="polite">
+          <span>Result</span>
+          <output id="resultOutput">13</output>
+          <p id="explanation">10 + 3 = 13</p>
+        </div>
+      </section>
+
+      <section class="panel practice">
+        <h2>Practice questions</h2>
+        <ol>
+          <li>What is the result of <code>12 % 5</code>?</li>
+          <li>
+            What is the difference between <code>==</code> and <code>===</code>?
+          </li>
+          <li>
+            What does <code>let x = 4; x += 3;</code> make <code>x</code>?
+          </li>
+          <li>
+            What is the result of <code>2 + 3 * 2</code>? How can you make it
+            10?
+          </li>
+          <li>
+            Write a ternary expression that sets <code>"Adult"</code> when age
+            is at least 18 and <code>"Minor"</code> otherwise.
+          </li>
+        </ol>
+        <details>
+          <summary>Show answers</summary>
+          <ol>
+            <li><code>2</code></li>
+            <li>
+              <code>==</code> may convert types; <code>===</code> checks value
+              and type without that conversion.
+            </li>
+            <li><code>7</code></li>
+            <li>
+              <code>8</code>; use <code>(2 + 3) * 2</code> to get
+              <code>10</code>.
+            </li>
+            <li><code>age >= 18 ? "Adult" : "Minor"</code></li>
+          </ol>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        JavaScript lesson • Practice by changing the examples and predicting the
+        results.
+      </p>
+    </footer>
+  </body>
+</html>

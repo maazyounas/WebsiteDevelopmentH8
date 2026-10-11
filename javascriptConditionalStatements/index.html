@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Conditional Statements — Lesson</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">JAVASCRIPT BASICS</p>
+    <h1>Conditional Statements</h1>
+    <p>Teach JavaScript how to make decisions based on conditions.</p>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>What are conditional statements?</h2>
+      <p>Conditional statements let a program choose which code to run depending on whether a condition is true or false.</p>
+      <pre><code>const temperature = 32;
+
+if (temperature > 30) {
+  console.log("It is a hot day.");
+}</code></pre>
+      <p class="note"><strong>Remember:</strong> A condition is usually an expression that evaluates to a truthy or falsy value. Use curly braces <code>{ }</code> to clearly mark the code inside each branch.</p>
+    </section>
+
+    <section class="lesson-grid">
+      <article class="panel">
+        <h2>1. <code>if</code></h2>
+        <p>Runs a block only when its condition is true.</p>
+        <pre><code>const age = 20;
+
+if (age >= 18) {
+  console.log("You can vote.");
+}</code></pre>
+        <p>If the condition is false, the block is skipped.</p>
+      </article>
+
+      <article class="panel">
+        <h2>2. <code>if...else</code></h2>
+        <p>Chooses between two paths: one for true and one for false.</p>
+        <pre><code>const age = 16;
+
+if (age >= 18) {
+  console.log("Adult");
+} else {
+  console.log("Minor");
+}</code></pre>
+        <p>Exactly one of these two blocks runs.</p>
+      </article>
+
+      <article class="panel">
+        <h2>3. <code>else if</code></h2>
+        <p>Checks multiple conditions in order. The first true branch runs.</p>
+        <pre><code>const marks = 76;
+
+if (marks >= 90) {
+  console.log("Grade A");
+} else if (marks >= 70) {
+  console.log("Grade B");
+} else if (marks >= 50) {
+  console.log("Grade C");
+} else {
+  console.log("Needs improvement");
+}</code></pre>
+        <p class="note">Order matters. Check higher grade boundaries first so a student with 95 marks receives Grade A.</p>
+      </article>
+
+      <article class="panel">
+        <h2>4. Nested conditions</h2>
+        <p>An <code>if</code> statement inside another <code>if</code> statement is called a nested condition.</p>
+        <pre><code>const age = 22;
+const hasID = true;
+
+if (age >= 18) {
+  if (hasID) {
+    console.log("Entry allowed");
+  } else {
+    console.log("Please show ID");
+  }
+} else {
+  console.log("Too young");
+}</code></pre>
+        <p>Use nesting when a second decision should be checked only after the first condition passes. Avoid too many nested levels.</p>
+      </article>
+
+      <article class="panel">
+        <h2>5. <code>switch</code></h2>
+        <p>Matches one expression against several possible values. Use <code>break</code> to stop a case from falling through to the next one.</p>
+        <pre><code>const day = "Monday";
+
+switch (day) {
+  case "Monday":
+    console.log("Start of the week");
+    break;
+  case "Friday":
+    console.log("Almost the weekend");
+    break;
+  default:
+    console.log("Another day");
+}</code></pre>
+        <p><code>default</code> runs if no case matches. <code>switch</code> uses strict matching, so value and type must match.</p>
+      </article>
+
+      <article class="panel">
+        <h2>6. Truthy and falsy values</h2>
+        <p>JavaScript can use non-Boolean values in conditions. These are converted to true or false in a Boolean context.</p>
+        <p><strong>Falsy values:</strong></p>
+        <pre><code>false
+0
+-0
+0n
+""
+null
+undefined
+NaN</code></pre>
+        <p>Most other values are truthy, including <code>"0"</code>, <code>"false"</code>, <code>[]</code>, and <code>{}</code>.</p>
+        <pre><code>const username = "";
+
+if (username) {
+  console.log("Name entered");
+} else {
+  console.log("Name is missing");
+}</code></pre>
+      </article>
+
+      <article class="panel">
+        <h2>7. Logical conditions</h2>
+        <p>Combine or reverse conditions using logical operators.</p>
+        <ul>
+          <li><code>&amp;&amp;</code> AND: both conditions must be truthy.</li>
+          <li><code>||</code> OR: at least one condition must be truthy.</li>
+          <li><code>!</code> NOT: reverses a value's truthiness.</li>
+        </ul>
+        <pre><code>const age = 21;
+const hasTicket = true;
+
+if (age >= 18 && hasTicket) {
+  console.log("You may enter");
+}
+
+if (age < 13 || age > 65) {
+  console.log("Special price");
+}
+
+if (!hasTicket) {
+  console.log("Buy a ticket first");
+}</code></pre>
+      </article>
+
+      <article class="panel">
+        <h2>8. Ternary operator review</h2>
+        <p>A concise way to choose one of two expressions. It is useful for simple decisions.</p>
+        <pre><code>const age = 19;
+
+const message = age >= 18
+  ? "Adult"
+  : "Minor";
+
+console.log(message); // Adult</code></pre>
+        <p>Pattern: <code>condition ? valueIfTrue : valueIfFalse</code>. Use regular <code>if...else</code> when the logic has multiple steps or becomes hard to read.</p>
+      </article>
+    </section>
+
+    <section class="panel playground">
+      <h2>Interactive practice: grade checker</h2>
+      <p>Enter marks from 0 to 100. JavaScript validates the input and uses <code>if...else if...else</code> to assign a grade.</p>
+      <form id="gradeForm" novalidate>
+        <label for="marks">Student marks (0–100)</label>
+        <input id="marks" type="number" min="0" max="100" step="1" placeholder="Enter marks">
+        <button type="submit">Check grade</button>
+        <button type="reset" class="secondary">Clear</button>
+      </form>
+      <div id="gradeResult" class="result" role="status" aria-live="polite">Your grade will appear here.</div>
+    </section>
+
+    <section class="panel playground">
+      <h2>Interactive practice: login condition</h2>
+      <p>See how logical AND works. Both the correct username and password must be entered for the demo to approve the login.</p>
+      <form id="loginForm" novalidate>
+        <label for="username">Username (try <code>student</code>)</label>
+        <input id="username" type="text" placeholder="Enter username" autocomplete="off">
+        <label for="password">Password (try <code>learn123</code>)</label>
+        <input id="password" type="password" placeholder="Enter demo password" autocomplete="off">
+        <button type="submit">Test condition</button>
+      </form>
+      <div id="loginResult" class="result" role="status" aria-live="polite">Enter the demo credentials to test AND (&&).</div>
+      <p class="note">This is only a classroom demonstration. Real authentication must be handled securely on a server, not by hardcoding passwords in browser JavaScript.</p>
+    </section>
+
+    <section class="panel practice">
+      <h2>Practice questions</h2>
+      <ol>
+        <li>What is the difference between <code>if</code> and <code>if...else</code>?</li>
+        <li>Why should grade conditions usually check the highest marks first?</li>
+        <li>What does <code>if ("false")</code> do, and why?</li>
+        <li>What is the difference between <code>&amp;&amp;</code> and <code>||</code>?</li>
+        <li>When is a <code>switch</code> statement useful?</li>
+        <li>Rewrite <code>age >= 18 ? "Adult" : "Minor"</code> using <code>if...else</code>.</li>
+      </ol>
+      <details>
+        <summary>Show answers</summary>
+        <ol>
+          <li><code>if</code> runs code only if true; <code>if...else</code> provides a second path when false.</li>
+          <li>Because the first matching branch runs; checking lower thresholds first can incorrectly assign a lower grade.</li>
+          <li>The condition is truthy because a non-empty string is truthy, even if its text is "false".</li>
+          <li><code>&amp;&amp;</code> needs both sides truthy; <code>||</code> needs at least one side truthy.</li>
+          <li>When one expression is compared against several specific values, such as a day name or menu option.</li>
+          <li><code>if (age >= 18) { result = "Adult"; } else { result = "Minor"; }</code></li>
+        </ol>
+      </details>
+    </section>
+  </main>
+
+  <footer><p>JavaScript lesson • Condition → Decision → Result</p></footer>
+</body>
+</html>

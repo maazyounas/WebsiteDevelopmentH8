@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Input and Output — Lesson</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <p class="eyebrow">JAVASCRIPT BASICS</p>
+      <h1>User Input and Output</h1>
+      <p>
+        Learn how JavaScript receives information, checks it, and shows a
+        result.
+      </p>
+    </header>
+
+    <main class="container">
+      <section class="panel">
+        <h2>What are input and output?</h2>
+        <p>
+          <strong>Input</strong> is information a program receives from a user.
+          <strong>Output</strong> is information the program gives back, such as
+          a message, a number, or a result on a webpage.
+        </p>
+        <p class="note">
+          <strong>Remember:</strong> Values received through
+          <code>prompt()</code> and HTML text inputs are strings by default.
+          Convert them when you need to do numeric calculations.
+        </p>
+      </section>
+
+      <section class="lesson-grid">
+        <article class="panel">
+          <h2>1. <code>console.log()</code></h2>
+          <p>
+            Prints a value in the browser's developer console. It is useful for
+            testing and debugging.
+          </p>
+          <pre><code>const student = "Sara";
+console.log("Welcome!");
+console.log(student);
+console.log(5 + 3);
+
+// Output in the console:
+// Welcome!
+// Sara
+// 8</code></pre>
+          <p>
+            <strong>How to see it:</strong> Open the webpage, press F12 (or
+            right-click and choose Inspect), then select Console.
+          </p>
+          <button type="button" id="consoleDemo">Try console.log()</button>
+          <p class="small">
+            This button writes a message to the browser console.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>2. <code>alert()</code></h2>
+          <p>
+            Shows a simple message in a browser dialog. The user must dismiss it
+            to continue interacting with the page.
+          </p>
+          <pre><code>alert("Welcome to JavaScript!");</code></pre>
+          <button type="button" id="alertDemo">Try alert()</button>
+          <p class="small">Avoid showing too many alerts in a real website.</p>
+        </article>
+
+        <article class="panel">
+          <h2>3. <code>prompt()</code></h2>
+          <p>
+            Asks the user to enter text. It returns a string, or
+            <code>null</code> if the user cancels.
+          </p>
+          <pre><code>const name = prompt("What is your name?");
+
+if (name !== null) {
+  alert(`Hello, ${name}!`);
+}</code></pre>
+          <button type="button" id="promptDemo">Try prompt()</button>
+        </article>
+
+        <article class="panel">
+          <h2>4. <code>confirm()</code></h2>
+          <p>
+            Asks the user to confirm an action. It returns <code>true</code> for
+            OK and <code>false</code> for Cancel.
+          </p>
+          <pre><code>const wantsToContinue =
+  confirm("Do you want to continue?");
+
+console.log(wantsToContinue); // true or false</code></pre>
+          <button type="button" id="confirmDemo">Try confirm()</button>
+          <p id="confirmResult" class="inline-result" aria-live="polite">
+            Your choice will appear here.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>5. Read values from HTML inputs</h2>
+          <p>
+            Use <code>document.querySelector()</code> or
+            <code>getElementById()</code> to find an input, then read its
+            <code>.value</code>.
+          </p>
+          <pre><code>const nameInput =
+  document.querySelector("#studentName");
+
+console.log(nameInput.value);</code></pre>
+          <p>Try entering a name:</p>
+          <label for="studentName">Student name</label>
+          <input id="studentName" type="text" placeholder="Enter your name" />
+          <button type="button" id="readName">Read input value</button>
+          <p id="nameOutput" class="inline-result" aria-live="polite">
+            Your entered name will appear here.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>6. Convert strings to numbers</h2>
+          <p>
+            An HTML input's <code>.value</code> is text. Convert it using
+            <code>Number()</code> for arithmetic.
+          </p>
+          <pre><code>const inputValue = "25";
+const age = Number(inputValue);
+
+console.log(age + 5); // 30</code></pre>
+          <p>
+            Without conversion, <code>"25" + 5</code> produces
+            <code>"255"</code> because <code>+</code> can join strings.
+          </p>
+          <div class="demo-row">
+            <label for="numberText">Number written as text</label>
+            <input id="numberText" type="text" inputmode="decimal" value="25" />
+          </div>
+          <button type="button" id="convertNumber">Convert and add 5</button>
+          <p id="conversionOutput" class="inline-result" aria-live="polite">
+            The converted result will appear here.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>7. Display results in HTML</h2>
+          <p>
+            Use <code>textContent</code> to place text inside an element, such
+            as a paragraph or heading.
+          </p>
+          <pre><code>const output = document.querySelector("#output");
+output.textContent = "Hello from JavaScript!";</code></pre>
+          <p id="htmlOutput" class="output-box">
+            The JavaScript result will appear here.
+          </p>
+          <button type="button" id="displayResult">Display a result</button>
+        </article>
+
+        <article class="panel">
+          <h2>8. Basic input validation</h2>
+          <p>
+            Validation checks that input is present and acceptable before using
+            it. Trim text to catch blank spaces and check numbers with
+            <code>Number.isFinite()</code>.
+          </p>
+          <pre><code>const raw = ageInput.value.trim();
+const age = Number(raw);
+
+if (raw === "") {
+  // No input provided
+} else if (!Number.isFinite(age) || age < 0) {
+  // Invalid age
+} else {
+  // Valid age
+}</code></pre>
+          <p class="small">
+            This is basic client-side validation for learning. Important data
+            must also be validated on the server.
+          </p>
+        </article>
+      </section>
+
+      <section class="panel calculator">
+        <h2>Practice: simple age checker</h2>
+        <p>
+          Enter a name and age. The program validates both inputs and displays
+          the result directly on this webpage.
+        </p>
+        <form id="ageForm" novalidate>
+          <div class="form-grid">
+            <div>
+              <label for="fullName">Name</label>
+              <input
+                id="fullName"
+                name="fullName"
+                type="text"
+                placeholder="e.g. Ayesha"
+                autocomplete="name"
+              />
+            </div>
+            <div>
+              <label for="age">Age</label>
+              <input
+                id="age"
+                name="age"
+                type="number"
+                min="0"
+                max="120"
+                step="1"
+                placeholder="e.g. 19"
+              />
+            </div>
+          </div>
+          <button type="submit">Check age</button>
+          <button type="reset" class="secondary">Clear</button>
+          <p
+            id="formMessage"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+          >
+            Enter your details to begin.
+          </p>
+        </form>
+      </section>
+
+      <section class="panel practice">
+        <h2>Practice questions</h2>
+        <ol>
+          <li>
+            Where can you see the output of <code>console.log("Hi")</code>?
+          </li>
+          <li>
+            What does <code>prompt()</code> return if the user presses Cancel?
+          </li>
+          <li>
+            What is the difference between <code>alert()</code> and
+            <code>confirm()</code>?
+          </li>
+          <li>
+            Why should you use <code>Number(input.value)</code> before adding
+            two input values?
+          </li>
+          <li>What should a program do if a required input is blank?</li>
+        </ol>
+        <details>
+          <summary>Show answers</summary>
+          <ol>
+            <li>In the browser's developer console.</li>
+            <li><code>null</code>.</li>
+            <li>
+              <code>alert()</code> displays a message;
+              <code>confirm()</code> asks for OK or Cancel and returns a
+              Boolean.
+            </li>
+            <li>
+              Input values are strings by default; conversion makes numeric
+              arithmetic clear and reliable.
+            </li>
+            <li>
+              Show a helpful error and do not continue until the input is
+              corrected.
+            </li>
+          </ol>
+        </details>
+      </section>
+    </main>
+
+    <footer>
+      <p>JavaScript lesson • Input → Validate → Process → Output</p>
+    </footer>
+  </body>
+</html>
