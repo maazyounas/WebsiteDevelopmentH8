@@ -1,0 +1,263 @@
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6fb;
+    color: #20283a;
+    line-height: 1.7;
+}
+
+.hero {
+    text-align: center;
+    padding: 55px 20px;
+    color: white;
+    background: #182848;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 46px);
+    margin: 8px 0;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: 10px auto;
+}
+
+.tag {
+    color: #a9caff;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid #dce2ec;
+}
+
+.navigation a {
+    color: #2459a9;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.navigation a:hover {
+    background: #eaf1ff;
+}
+
+main {
+    width: 92%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.lesson,
+.practice {
+    position: relative;
+    padding: 28px;
+    margin-bottom: 25px;
+    background: white;
+    border: 1px solid #e0e5ee;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(20, 40, 80, 0.05);
+}
+
+.lesson {
+    scroll-margin-top: 20px;
+    border-left: 5px solid #3978d4;
+}
+
+.number {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 5px;
+    background: #eaf1ff;
+    color: #2459a9;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 12px 0;
+    color: #182848;
+    line-height: 1.35;
+}
+
+h3 {
+    margin: 22px 0 8px;
+    font-size: 17px;
+    color: #263e67;
+}
+
+p {
+    margin-top: 8px;
+}
+
+.definition {
+    padding: 13px 15px;
+    border-left: 3px solid #5d91e3;
+    background: #f0f5ff;
+    border-radius: 4px;
+}
+
+.explanation {
+    color: #48566d;
+}
+
+.note {
+    padding: 12px 15px;
+    background: #fff7df;
+    border-left: 3px solid #e7ad30;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+pre {
+    margin: 12px 0;
+    padding: 20px;
+    overflow-x: auto;
+    border-radius: 8px;
+    background: #151c2c;
+    color: #e6edf8;
+    font-size: 14px;
+    line-height: 1.8;
+    tab-size: 4;
+}
+
+pre code {
+    font-family: Consolas, "Courier New", monospace;
+    white-space: pre;
+}
+
+p code,
+li code {
+    background: #edf1f8;
+    color: #a12b56;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: Consolas, "Courier New", monospace;
+}
+
+ul,
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin-bottom: 7px;
+}
+
+button {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 11px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #2866c5;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #194b96;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #83b5ff;
+    outline-offset: 3px;
+}
+
+input {
+    width: 100%;
+    max-width: 320px;
+    padding: 11px 12px;
+    margin: 8px 0;
+    border: 1px solid #cbd4e2;
+    border-radius: 6px;
+    font: inherit;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.input-row input {
+    width: 130px;
+}
+
+.output {
+    min-height: 52px;
+    margin-top: 14px;
+    padding: 13px 15px;
+    border: 1px dashed #aabbd3;
+    border-radius: 7px;
+    background: #f7f9fc;
+    color: #176b3a;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.practice {
+    border-top: 5px solid #269b70;
+}
+
+footer {
+    padding: 25px 15px;
+    background: #182848;
+    color: white;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 35px 15px;
+    }
+
+    main {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .lesson,
+    .practice {
+        padding: 18px;
+    }
+
+    pre {
+        padding: 14px;
+        font-size: 12px;
+    }
+
+    .navigation {
+        gap: 4px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+    }
+}

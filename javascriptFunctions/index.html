@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 8 - JavaScript Functions</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="hero">
+    <p class="tag">JAVASCRIPT COURSE • CLASS 08</p>
+    <h1>JavaScript Functions</h1>
+    <p>Learn the syntax, understand the code, and run examples yourself.</p>
+</header>
+
+<nav class="navigation">
+    <a href="#intro">Introduction</a>
+    <a href="#declaration">Declaration</a>
+    <a href="#expression">Expression</a>
+    <a href="#parameters">Parameters</a>
+    <a href="#return">Return</a>
+    <a href="#arrow">Arrow Functions</a>
+    <a href="#scope">Scope</a>
+    <a href="#hoisting">Hoisting</a>
+</nav>
+
+<main>
+
+    <!-- 1. INTRODUCTION -->
+    <section class="lesson" id="intro">
+        <span class="number">01</span>
+        <h2>What Is a Function?</h2>
+
+        <p class="definition">
+            A function is a reusable block of code that performs
+            a specific task whenever we call it.
+        </p>
+
+        <h3>Basic Syntax</h3>
+        <pre><code>function functionName() {
+    // Write your code here
+}
+
+functionName(); // Call the function</code></pre>
+
+        <h3>Understand the Syntax</h3>
+        <ul>
+            <li><code>function</code> — keyword used to declare a function.</li>
+            <li><code>functionName</code> — the name we give the function.</li>
+            <li><code>()</code> — parentheses that can contain parameters.</li>
+            <li><code>{ }</code> — the function body, containing the code to execute.</li>
+            <li><code>functionName()</code> — calls or executes the function.</li>
+        </ul>
+
+        <h3>Example</h3>
+        <pre><code>function sayHello() {
+    console.log("Hello Students!");
+}
+
+sayHello();</code></pre>
+
+        <p class="explanation">
+            First, we declare the function. Then we call it.
+            The message appears when the function executes.
+        </p>
+
+        <button data-run="intro">Run Example</button>
+        <div class="output" id="output-intro" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 2. FUNCTION DECLARATION -->
+    <section class="lesson" id="declaration">
+        <span class="number">02</span>
+        <h2>Function Declaration</h2>
+
+        <p class="definition">
+            A function declaration defines a named function using
+            the <code>function</code> keyword.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>function functionName(parameters) {
+    // Statements
+}
+
+functionName(arguments);</code></pre>
+
+        <h3>Example</h3>
+        <pre><code>function welcome() {
+    return "Welcome to JavaScript!";
+}
+
+console.log(welcome());</code></pre>
+
+        <h3>Remember</h3>
+        <ul>
+            <li>The function is defined using its name.</li>
+            <li>It can be called multiple times.</li>
+            <li>Function declarations can generally be called before their definition in the same scope.</li>
+        </ul>
+
+        <button data-run="declaration">Run Example</button>
+        <div class="output" id="output-declaration" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 3. FUNCTION EXPRESSION -->
+    <section class="lesson" id="expression">
+        <span class="number">03</span>
+        <h2>Function Expression</h2>
+
+        <p class="definition">
+            A function expression creates a function and assigns it
+            to a variable.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>const variableName = function(parameters) {
+    // Statements
+};
+
+variableName(arguments);</code></pre>
+
+        <h3>Example</h3>
+        <pre><code>const greet = function() {
+    return "Good morning!";
+};
+
+console.log(greet());</code></pre>
+
+        <h3>Important Difference</h3>
+        <p>
+            Notice the semicolon after the closing brace. The function
+            expression is part of a variable assignment.
+        </p>
+        <p>
+            Unlike a function declaration, a function expression
+            assigned to a <code>const</code> variable cannot be called
+            before that variable is initialized.
+        </p>
+
+        <button data-run="expression">Run Example</button>
+        <div class="output" id="output-expression" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 4. PARAMETERS AND ARGUMENTS -->
+    <section class="lesson" id="parameters">
+        <span class="number">04</span>
+        <h2>Parameters and Arguments</h2>
+
+        <p class="definition">
+            Parameters are placeholders in a function definition.
+            Arguments are the actual values supplied when calling it.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>function greet(name) {
+    return "Hello " + name;
+}
+
+greet("Ali");</code></pre>
+
+        <h3>Understand the Example</h3>
+        <ul>
+            <li><code>name</code> is the parameter.</li>
+            <li><code>"Ali"</code> is the argument.</li>
+            <li>The function uses the supplied value to create a greeting.</li>
+        </ul>
+
+        <h3>Try It Yourself</h3>
+        <label for="studentName">Enter a student's name:</label>
+        <input type="text" id="studentName" placeholder="For example, Ali">
+
+        <button data-run="parameters">Run Example</button>
+        <div class="output" id="output-parameters" aria-live="polite">
+            Enter a name and run the example.
+        </div>
+    </section>
+
+    <!-- 5. RETURN VALUES -->
+    <section class="lesson" id="return">
+        <span class="number">05</span>
+        <h2>Return Values</h2>
+
+        <p class="definition">
+            The <code>return</code> keyword sends a result back to
+            the code that called the function and ends that function's
+            current execution.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>function functionName(parameters) {
+    return result;
+}
+
+const answer = functionName(arguments);</code></pre>
+
+        <h3>Example</h3>
+        <pre><code>function add(a, b) {
+    return a + b;
+}
+
+const answer = add(10, 20);
+
+console.log(answer); // 30</code></pre>
+
+        <h3>Try It Yourself</h3>
+        <div class="input-row">
+            <input type="number" id="numberA" value="10" aria-label="First number">
+            <span>+</span>
+            <input type="number" id="numberB" value="20" aria-label="Second number">
+        </div>
+
+        <button data-run="return">Calculate Sum</button>
+        <div class="output" id="output-return" aria-live="polite">
+            Your result will appear here.
+        </div>
+
+        <p class="note">
+            HTML number inputs provide their values as strings.
+            JavaScript converts them to numbers before performing addition.
+        </p>
+    </section>
+
+    <!-- 6. DEFAULT PARAMETERS -->
+    <section class="lesson" id="default">
+        <span class="number">06</span>
+        <h2>Default Parameters</h2>
+
+        <p class="definition">
+            A default parameter supplies a fallback value when an
+            argument is omitted or passed as <code>undefined</code>.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>function greet(name = "Guest") {
+    return "Welcome " + name;
+}
+
+greet();       // Welcome Guest
+greet("Sara"); // Welcome Sara</code></pre>
+
+        <h3>Try It Yourself</h3>
+        <label for="guestName">Enter a name (optional):</label>
+        <input type="text" id="guestName" placeholder="Leave empty for Guest">
+
+        <button data-run="default">Run Example</button>
+        <div class="output" id="output-default" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 7. ARROW FUNCTIONS -->
+    <section class="lesson" id="arrow">
+        <span class="number">07</span>
+        <h2>Arrow Functions</h2>
+
+        <p class="definition">
+            An arrow function is a shorter way to write a function
+            expression, using the <code>=&gt;</code> symbol.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>const functionName = (parameters) => {
+    // Statements
+};
+
+functionName(arguments);</code></pre>
+
+        <h3>Short Syntax</h3>
+        <pre><code>const square = number => number * number;
+
+console.log(square(5)); // 25</code></pre>
+
+        <h3>Explanation</h3>
+        <ul>
+            <li><code>const square</code> stores the function in a variable.</li>
+            <li><code>number</code> is the parameter.</li>
+            <li><code>=&gt;</code> defines the arrow function.</li>
+            <li><code>number * number</code> is returned automatically because it is a concise expression body.</li>
+        </ul>
+
+        <button data-run="arrow">Run Example</button>
+        <div class="output" id="output-arrow" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 8. ANONYMOUS FUNCTIONS -->
+    <section class="lesson" id="anonymous">
+        <span class="number">08</span>
+        <h2>Anonymous Functions</h2>
+
+        <p class="definition">
+            An anonymous function is a function expression without
+            its own function name.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>const greet = function() {
+    return "Hello!";
+};
+
+console.log(greet());</code></pre>
+
+        <h3>Anonymous Function in an Event</h3>
+        <pre><code>button.addEventListener("click", function() {
+    console.log("Button clicked!");
+});</code></pre>
+
+        <p class="explanation">
+            In the second example, the anonymous function is passed
+            directly to <code>addEventListener</code>. It runs when
+            the button is clicked.
+        </p>
+
+        <button data-run="anonymous">Run Example</button>
+        <div class="output" id="output-anonymous" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 9. CALLBACK FUNCTIONS -->
+    <section class="lesson" id="callback">
+        <span class="number">09</span>
+        <h2>Callback Functions</h2>
+
+        <p class="definition">
+            A callback is a function passed as an argument to another
+            function so that the receiving function can call it.
+        </p>
+
+        <h3>Syntax</h3>
+        <pre><code>function process(callback) {
+    callback();
+}
+
+function sayHi() {
+    console.log("Hi!");
+}
+
+process(sayHi);</code></pre>
+
+        <h3>Explanation</h3>
+        <ul>
+            <li><code>sayHi</code> is passed without parentheses.</li>
+            <li><code>callback</code> receives the function.</li>
+            <li><code>callback()</code> executes the received function.</li>
+        </ul>
+
+        <p class="note">
+            <code>process(sayHi)</code> passes the function itself.
+            <code>process(sayHi())</code> would call it immediately
+            and pass its return value instead.
+        </p>
+
+        <button data-run="callback">Run Example</button>
+        <div class="output" id="output-callback" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 10. GLOBAL AND LOCAL VARIABLES -->
+    <section class="lesson" id="scope">
+        <span class="number">10</span>
+        <h2>Global and Local Variables</h2>
+
+        <h3>Global Variable</h3>
+        <p class="definition">
+            A variable declared outside a function can be accessed
+            within its surrounding scope.
+        </p>
+
+        <pre><code>const school = "ABC School";
+
+function showSchool() {
+    return school;
+}
+
+console.log(showSchool());</code></pre>
+
+        <h3>Local Variable</h3>
+        <p class="definition">
+            A variable declared inside a function is accessible
+            within that function, subject to its scope.
+        </p>
+
+        <pre><code>function showStudent() {
+    const student = "Ali";
+    return student;
+}
+
+console.log(showStudent());
+
+// console.log(student); // ReferenceError</code></pre>
+
+        <button data-run="scope">Run Example</button>
+        <div class="output" id="output-scope" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 11. FUNCTION SCOPE -->
+    <section class="lesson" id="function-scope">
+        <span class="number">11</span>
+        <h2>Function Scope and Block Scope</h2>
+
+        <p class="definition">
+            Scope determines where a variable can be accessed.
+            Variables declared with <code>let</code> and
+            <code>const</code> follow block scope.
+        </p>
+
+        <h3>Example</h3>
+        <pre><code>function checkMarks() {
+    let marks = 80;
+
+    if (marks >= 50) {
+        let result = "Pass";
+        console.log(result);
+    }
+
+    console.log(marks);
+
+    // console.log(result);
+    // ReferenceError: result is block-scoped
+}
+
+checkMarks();</code></pre>
+
+        <p class="explanation">
+            The variable <code>marks</code> is available throughout
+            the function. The variable <code>result</code> is only
+            available inside the <code>if</code> block.
+        </p>
+
+        <button data-run="function-scope">Run Example</button>
+        <div class="output" id="output-function-scope" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <!-- 12. HOISTING -->
+    <section class="lesson" id="hoisting">
+        <span class="number">12</span>
+        <h2>Basic Function Hoisting</h2>
+
+        <p class="definition">
+            Hoisting describes how JavaScript processes declarations
+            before executing the code.
+        </p>
+
+        <h3>Function Declaration Example</h3>
+        <pre><code>sayWelcome();
+
+function sayWelcome() {
+    console.log("Welcome!");
+}</code></pre>
+
+        <p class="explanation">
+            This works because function declarations can be called
+            before their definition in the same scope.
+        </p>
+
+        <h3>Function Expression Difference</h3>
+        <pre><code>// This would cause an error:
+sayHello();
+
+const sayHello = function() {
+    console.log("Hello!");
+};</code></pre>
+
+        <p class="note">
+            A function expression stored in a <code>const</code>
+            variable cannot be called before initialization.
+            Do not execute the error example.
+        </p>
+
+        <button data-run="hoisting">Run Example</button>
+        <div class="output" id="output-hoisting" aria-live="polite">
+            Your output will appear here.
+        </div>
+    </section>
+
+    <section class="practice">
+        <h2>Class Practice</h2>
+        <p>Ask students to complete these tasks independently.</p>
+        <ol>
+            <li>Declare a function named <code>subtract</code> that subtracts two numbers.</li>
+            <li>Write a function that checks whether a number is even or odd.</li>
+            <li>Write a function that accepts marks and returns Pass or Fail.</li>
+            <li>Convert a normal function into an arrow function.</li>
+            <li>Write a callback function that displays a student's name.</li>
+        </ol>
+    </section>
+
+</main>
+
+<footer>
+    <p>JavaScript Learning Series • Class 8</p>
+</footer>
+
+</body>
+</html>
