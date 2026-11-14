@@ -1,0 +1,979 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Arrays & Array Methods</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">☰</button>
+
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <span class="brand-badge">JS</span>
+        <div>
+          <strong>Arrays</strong>
+          <small>Lecture notes</small>
+        </div>
+      </div>
+      <nav id="toc">
+        <a href="#intro">1. What is an Array?</a>
+        <a href="#creating">2. Creating Arrays</a>
+        <a href="#access">3. Accessing &amp; Modifying</a>
+        <a href="#addremove">4. push, pop, shift, unshift</a>
+        <a href="#slice-splice">5. slice &amp; splice</a>
+        <a href="#searching">6. Searching</a>
+        <a href="#iterating">7. Looping</a>
+        <a href="#transform">8. map, filter, reduce</a>
+        <a href="#some-every">9. some &amp; every</a>
+        <a href="#sorting">10. sort &amp; reverse</a>
+        <a href="#combine">11. concat, join, flat</a>
+        <a href="#static">12. Array.from, of, isArray, fill</a>
+        <a href="#destructuring">13. Destructuring &amp; Spread</a>
+        <a href="#immutable">14. Mutating vs Non-mutating</a>
+        <a href="#chaining">15. Method Chaining</a>
+        <a href="#mistakes">16. Common Mistakes</a>
+        <a href="#practice">17. Practice Challenges</a>
+        <a href="#cheatsheet">18. Cheat Sheet</a>
+      </nav>
+      <button id="themeBtn" class="theme-btn">🌙 Toggle theme</button>
+    </aside>
+
+    <main>
+      <div id="progress" class="progress"></div>
+
+      <header class="hero">
+        <p class="eyebrow">JavaScript Fundamentals</p>
+        <h1>Arrays &amp; Array Methods</h1>
+        <p class="lead">
+          Store, access, transform and organise collections of data. Every
+          example below is <b>editable</b> and <b>runnable</b> — change the code
+          and press <kbd>Run</kbd> (or <kbd>Ctrl</kbd>+<kbd>Enter</kbd>).
+        </p>
+        <div class="chips">
+          <span>Beginner friendly</span><span>Live code</span
+          ><span>18 topics</span><span>Practice included</span>
+        </div>
+      </header>
+
+      <!-- 1 -->
+      <section id="intro">
+        <h2><span>1</span> What is an Array?</h2>
+        <p>
+          An <b>array</b> is an ordered list of values. Each value is called an
+          <b>element</b> and has a numeric position called an <b>index</b>.
+          Indexes start at <code>0</code>.
+        </p>
+        <ul>
+          <li>
+            Can hold any type: numbers, strings, booleans, objects, even other
+            arrays.
+          </li>
+          <li>Can mix types (though usually you shouldn't).</li>
+          <li>Size is dynamic — it grows and shrinks automatically.</li>
+          <li>
+            Arrays are <b>objects</b> under the hood:
+            <code>typeof [] === "object"</code>.
+          </li>
+        </ul>
+        <div class="visual">
+          <div class="cell"><i>0</i>"apple"</div>
+          <div class="cell"><i>1</i>"banana"</div>
+          <div class="cell"><i>2</i>"cherry"</div>
+          <div class="cell"><i>3</i>"date"</div>
+        </div>
+        <p class="caption">
+          length = 4 · first index = 0 · last index = length − 1
+        </p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const fruits = ["apple", "banana", "cherry", "date"];
+
+console.log(fruits);
+console.log("length:", fruits.length);
+console.log("typeof:", typeof fruits);
+console.log("is array?", Array.isArray(fruits));</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section id="creating">
+        <h2><span>2</span> Creating Arrays</h2>
+        <p>
+          The <b>array literal</b> <code>[]</code> is the preferred way. Other
+          ways exist but are used in special cases.
+        </p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+// 1. Array literal (recommended)
+const numbers = [10, 20, 30];
+
+// 2. Mixed types
+const mixed = ["Ali", 25, true, null, { city: "Lahore" }];
+
+// 3. Empty array
+const empty = [];
+
+// 4. Array constructor
+const a = new Array(3);        // 3 EMPTY slots (careful!)
+const b = new Array(1, 2, 3);  // [1, 2, 3]
+
+// 5. Nested array (2D / matrix)
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+];
+
+console.log(numbers);
+console.log(mixed);
+console.log(empty);
+console.log(a, b);
+console.log(matrix[1][2]); // row 1, column 2</textarea
+          >
+        </div>
+        <div class="note tip">
+          <b>Tip:</b> Use <code>const</code> for arrays. You can still change
+          the <em>contents</em> — you just can't reassign the variable.
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section id="access">
+        <h2><span>3</span> Accessing &amp; Modifying Elements</h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const colors = ["red", "green", "blue"];
+
+console.log(colors[0]);                 // first
+console.log(colors[colors.length - 1]); // last (old way)
+console.log(colors.at(-1));             // last (modern way)
+console.log(colors[10]);                // out of range → undefined
+
+// Modify by index
+colors[1] = "yellow";
+console.log(colors);
+
+// Assigning beyond the end creates empty slots
+colors[5] = "pink";
+console.log(colors, colors.length);
+
+// length is writable — this TRUNCATES the array
+colors.length = 2;
+console.log(colors);</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section id="addremove">
+        <h2><span>4</span> Adding &amp; Removing: push, pop, shift, unshift</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>What it does</th>
+              <th>Returns</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>push(x)</code></td>
+              <td>Add to the <b>end</b></td>
+              <td>new length</td>
+            </tr>
+            <tr>
+              <td><code>pop()</code></td>
+              <td>Remove from the <b>end</b></td>
+              <td>removed element</td>
+            </tr>
+            <tr>
+              <td><code>unshift(x)</code></td>
+              <td>Add to the <b>start</b></td>
+              <td>new length</td>
+            </tr>
+            <tr>
+              <td><code>shift()</code></td>
+              <td>Remove from the <b>start</b></td>
+              <td>removed element</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="caption">
+          All four <b>mutate</b> (change) the original array.
+        </p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const queue = ["B", "C"];
+
+console.log(queue.push("D", "E")); // 4  (new length)
+console.log(queue);                // ['B','C','D','E']
+
+console.log(queue.pop());          // 'E'
+console.log(queue);
+
+console.log(queue.unshift("A"));   // 4
+console.log(queue);
+
+console.log(queue.shift());        // 'A'
+console.log(queue);</textarea
+          >
+        </div>
+        <div class="note">
+          <b>Real-world use:</b> <code>push</code>/<code>pop</code> = a
+          <em>stack</em> (undo history). <code>push</code>/<code>shift</code> =
+          a <em>queue</em> (waiting line).
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section id="slice-splice">
+        <h2><span>5</span> slice vs splice</h2>
+        <p>These two names are confusing — they do very different things.</p>
+        <div class="two-col">
+          <div class="card">
+            <h4>slice(start, end)</h4>
+            <p>
+              Returns a <b>copy</b> of a portion. <b>Does not</b> change the
+              original. <code>end</code> is excluded.
+            </p>
+          </div>
+          <div class="card">
+            <h4>splice(start, deleteCount, ...items)</h4>
+            <p>
+              <b>Changes</b> the original: remove, insert or replace elements.
+              Returns removed items.
+            </p>
+          </div>
+        </div>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const nums = [0, 1, 2, 3, 4, 5];
+
+// ---- slice (safe, no mutation) ----
+console.log(nums.slice(2, 4));  // [2, 3]
+console.log(nums.slice(3));     // [3, 4, 5]
+console.log(nums.slice(-2));    // [4, 5]
+console.log(nums.slice());      // full shallow copy
+console.log("original:", nums);
+
+// ---- splice (mutates) ----
+const arr = ["a", "b", "c", "d", "e"];
+
+console.log(arr.splice(1, 2));          // remove 2 from index 1 → ['b','c']
+console.log(arr);                       // ['a','d','e']
+
+arr.splice(1, 0, "X", "Y");             // insert at index 1, delete 0
+console.log(arr);
+
+arr.splice(0, 1, "Z");                  // replace first element
+console.log(arr);</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section id="searching">
+        <h2><span>6</span> Searching: indexOf, includes, find, findIndex</h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const nums = [5, 12, 8, 130, 44, 12];
+
+// By value
+console.log(nums.indexOf(12));       // 1  (first match)
+console.log(nums.lastIndexOf(12));   // 5
+console.log(nums.indexOf(999));      // -1 (not found)
+console.log(nums.includes(8));       // true
+
+// By condition (use a callback)
+console.log(nums.find(n => n > 10));       // 12  (first match VALUE)
+console.log(nums.findIndex(n => n > 10));  // 1   (first match INDEX)
+console.log(nums.findLast(n => n > 10));   // 44
+console.log(nums.find(n => n > 1000));     // undefined
+
+// With objects
+const users = [
+  { id: 1, name: "Ali" },
+  { id: 2, name: "Sara" },
+  { id: 3, name: "Zain" },
+];
+console.log(users.find(u => u.id === 2));</textarea
+          >
+        </div>
+        <div class="note tip">
+          <b>Rule of thumb:</b> value you already know →
+          <code>includes</code>/<code>indexOf</code>. Need to test a condition →
+          <code>find</code>/<code>findIndex</code>.
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section id="iterating">
+        <h2><span>7</span> Looping Over Arrays</h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const langs = ["JS", "Python", "Go"];
+
+// 1. Classic for loop (index control, can break)
+for (let i = 0; i < langs.length; i++) {
+  console.log(i, langs[i]);
+}
+
+// 2. for...of (cleanest for values)
+for (const lang of langs) {
+  console.log("of:", lang);
+}
+
+// 3. forEach (callback; no return value, can't break)
+langs.forEach((lang, index) => {
+  console.log(`${index + 1}. ${lang}`);
+});
+
+// 4. entries() gives [index, value] pairs
+for (const [i, lang] of langs.entries()) {
+  console.log(i, "=>", lang);
+}</textarea
+          >
+        </div>
+        <div class="note warn">
+          <b>Avoid</b> <code>for...in</code> on arrays — it loops over keys (as
+          strings) and can include unexpected properties.
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section id="transform">
+        <h2><span>8</span> The Big Three: map, filter, reduce</h2>
+        <p>
+          These are the most important array methods in modern JavaScript. None
+          of them mutate the original array.
+        </p>
+
+        <h3>map — transform every element</h3>
+        <p>Returns a new array of the <b>same length</b>.</p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const prices = [10, 20, 30];
+
+const withTax = prices.map(p => p * 1.1);
+console.log(withTax);
+
+const people = [
+  { name: "Ali", age: 20 },
+  { name: "Sara", age: 25 },
+];
+const names = people.map(p => p.name);
+console.log(names);
+
+// map gives (element, index, array)
+console.log(["a", "b", "c"].map((ch, i) => ch + i));</textarea
+          >
+        </div>
+
+        <h3>filter — keep only what passes a test</h3>
+        <p>Returns a new array with <b>equal or fewer</b> elements.</p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+
+console.log(nums.filter(n => n % 2 === 0));  // evens
+console.log(nums.filter(n => n > 5));
+
+const words = ["apple", "", "banana", "", "cherry"];
+console.log(words.filter(Boolean));          // removes empty strings
+
+const products = [
+  { name: "Pen", price: 5, inStock: true },
+  { name: "Book", price: 15, inStock: false },
+  { name: "Bag", price: 40, inStock: true },
+];
+console.log(products.filter(p => p.inStock && p.price < 20));</textarea
+          >
+        </div>
+
+        <h3>reduce — boil an array down to one value</h3>
+        <p>
+          <code
+            >reduce((accumulator, current) => newAccumulator,
+            initialValue)</code
+          >
+        </p>
+        <div class="visual steps">
+          <div class="cell">acc = 0</div>
+          <div class="arrow">+ 10 →</div>
+          <div class="cell">acc = 10</div>
+          <div class="arrow">+ 20 →</div>
+          <div class="cell">acc = 30</div>
+          <div class="arrow">+ 30 →</div>
+          <div class="cell">acc = 60</div>
+        </div>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const nums = [10, 20, 30];
+
+// Sum
+const sum = nums.reduce((acc, n) => acc + n, 0);
+console.log("sum:", sum);
+
+// Max
+console.log("max:", nums.reduce((a, b) => (a > b ? a : b)));
+
+// Count occurrences
+const votes = ["yes", "no", "yes", "yes", "no"];
+const tally = votes.reduce((acc, v) => {
+  acc[v] = (acc[v] || 0) + 1;
+  return acc;
+}, {});
+console.log(tally);
+
+// Group objects by property
+const items = [
+  { type: "fruit", name: "apple" },
+  { type: "veg", name: "carrot" },
+  { type: "fruit", name: "mango" },
+];
+const grouped = items.reduce((acc, item) => {
+  (acc[item.type] ||= []).push(item.name);
+  return acc;
+}, {});
+console.log(grouped);</textarea
+          >
+        </div>
+        <div class="note warn">
+          <b>Always give reduce an initial value.</b> Without one, reduce on an
+          empty array throws a TypeError.
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section id="some-every">
+        <h2><span>9</span> some &amp; every</h2>
+        <p>
+          Both return a <b>boolean</b> and stop as soon as the answer is known.
+        </p>
+        <ul>
+          <li>
+            <code>some</code> → is <em>at least one</em> element passing the
+            test?
+          </li>
+          <li><code>every</code> → do <em>all</em> elements pass the test?</li>
+        </ul>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const ages = [18, 22, 30, 15];
+
+console.log(ages.some(a => a < 18));    // true  – someone is a minor
+console.log(ages.every(a => a >= 18));  // false – not everyone is adult
+
+console.log([].some(x => true));        // false
+console.log([].every(x => false));      // true  (vacuous truth!)
+
+const cart = [{ qty: 1 }, { qty: 3 }, { qty: 2 }];
+console.log("all valid?", cart.every(i => i.qty > 0));</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 10 -->
+      <section id="sorting">
+        <h2><span>10</span> sort &amp; reverse</h2>
+        <div class="note warn">
+          <b>Big gotcha:</b> <code>sort()</code> with no argument converts items
+          to <em>strings</em> and sorts alphabetically. Numbers need a compare
+          function!
+        </div>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const nums = [100, 25, 3, 40, 1];
+
+// WRONG for numbers
+console.log([...nums].sort());
+
+// Correct: compare function (a, b)
+console.log([...nums].sort((a, b) => a - b));  // ascending
+console.log([...nums].sort((a, b) => b - a));  // descending
+
+// Strings: use localeCompare
+const names = ["zain", "Ali", "sara", "Bilal"];
+console.log([...names].sort());                          // uppercase first!
+console.log([...names].sort((a, b) => a.localeCompare(b)));
+
+// Sort objects by a property
+const students = [
+  { name: "Ali", marks: 78 },
+  { name: "Sara", marks: 92 },
+  { name: "Zain", marks: 65 },
+];
+console.log(students.sort((a, b) => b.marks - a.marks));
+
+// reverse flips order (mutates!)
+console.log([1, 2, 3].reverse());</textarea
+          >
+        </div>
+        <p class="caption">
+          Compare function: return negative → <code>a</code> first · positive →
+          <code>b</code> first · 0 → keep order. Note: <code>sort</code> and
+          <code>reverse</code> <b>mutate</b>, which is why we copy with
+          <code>[...nums]</code> first.
+        </p>
+      </section>
+
+      <!-- 11 -->
+      <section id="combine">
+        <h2>
+          <span>11</span> Combining &amp; Flattening: concat, join, flat,
+          flatMap
+        </h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const a = [1, 2];
+const b = [3, 4];
+
+console.log(a.concat(b));          // [1,2,3,4]
+console.log([...a, ...b, 5]);      // spread — modern & flexible
+
+// join → array to string
+const parts = ["2026", "11", "08"];
+console.log(parts.join("-"));
+console.log(["Hello", "World"].join(" "));
+
+// split is the opposite (string method)
+console.log("a,b,c".split(","));
+
+// flat → flatten nested arrays
+const nested = [1, [2, 3], [4, [5, 6]]];
+console.log(nested.flat());        // 1 level
+console.log(nested.flat(2));       // 2 levels
+console.log(nested.flat(Infinity));// all levels
+
+// flatMap = map + flat(1)
+const sentences = ["hello world", "js is fun"];
+console.log(sentences.flatMap(s => s.split(" ")));</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 12 -->
+      <section id="static">
+        <h2>
+          <span>12</span> Static Helpers: Array.isArray, Array.from, Array.of,
+          fill
+        </h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+// Array.isArray — the reliable check
+console.log(Array.isArray([]));        // true
+console.log(Array.isArray("hi"));      // false
+
+// Array.from — convert iterables / array-likes
+console.log(Array.from("hello"));
+console.log(Array.from(new Set([1, 1, 2, 3])));
+console.log(Array.from({ length: 5 }, (_, i) => i * 2)); // [0,2,4,6,8]
+
+// Array.of
+console.log(Array.of(7));              // [7]  (new Array(7) makes 7 empty slots)
+
+// fill
+console.log(new Array(4).fill(0));     // [0,0,0,0]
+console.log([1, 2, 3, 4, 5].fill(9, 1, 3));
+
+// Remove duplicates (popular trick)
+const dupes = [1, 2, 2, 3, 3, 3];
+console.log([...new Set(dupes)]);
+
+// Range 1..5
+console.log([...Array(5).keys()].map(n => n + 1));</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 13 -->
+      <section id="destructuring">
+        <h2><span>13</span> Destructuring, Spread &amp; Rest</h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const rgb = [255, 128, 0];
+
+// Destructuring: unpack into variables
+const [r, g, b] = rgb;
+console.log(r, g, b);
+
+// Skip items, default values
+const [first, , third, fourth = "none"] = ["a", "b", "c"];
+console.log(first, third, fourth);
+
+// Rest: collect the remaining items
+const [head, ...tail] = [1, 2, 3, 4];
+console.log(head, tail);
+
+// Swap two variables — no temp needed
+let x = 1, y = 2;
+[x, y] = [y, x];
+console.log(x, y);
+
+// Spread: copy / merge / pass as arguments
+const original = [1, 2, 3];
+const copy = [...original];
+copy.push(4);
+console.log(original, copy);
+console.log(Math.max(...original));</textarea
+          >
+        </div>
+        <div class="note">
+          <b>Shallow copy warning:</b> <code>[...arr]</code> and
+          <code>slice()</code> copy only the first level. Nested objects/arrays
+          are still shared references. Use <code>structuredClone(arr)</code> for
+          a deep copy.
+        </div>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const orig = [{ n: 1 }, { n: 2 }];
+
+const shallow = [...orig];
+shallow[0].n = 999;
+console.log(orig[0].n);   // 999 – changed the original too!
+
+const deep = structuredClone(orig);
+deep[1].n = 555;
+console.log(orig[1].n);   // 2 – safe</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 14 -->
+      <section id="immutable">
+        <h2><span>14</span> Mutating vs Non-mutating Methods</h2>
+        <p>
+          Knowing which methods change the original is crucial (especially in
+          React/Redux).
+        </p>
+        <div class="two-col">
+          <div class="card bad">
+            <h4>⚠ Mutating</h4>
+            <p>
+              <code>push</code> <code>pop</code> <code>shift</code>
+              <code>unshift</code> <code>splice</code> <code>sort</code>
+              <code>reverse</code> <code>fill</code>
+            </p>
+          </div>
+          <div class="card good">
+            <h4>✓ Non-mutating</h4>
+            <p>
+              <code>map</code> <code>filter</code> <code>reduce</code>
+              <code>slice</code> <code>concat</code> <code>flat</code>
+              <code>find</code> <code>includes</code> <code>join</code>
+            </p>
+          </div>
+        </div>
+        <p>Modern JS (ES2023) added <b>non-mutating twins</b>:</p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const nums = [3, 1, 2];
+
+console.log(nums.toSorted());          // sorted COPY
+console.log(nums.toReversed());        // reversed COPY
+console.log(nums.toSpliced(1, 1));     // spliced COPY
+console.log(nums.with(0, 99));         // replace index 0 in a COPY
+console.log("original untouched:", nums);</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 15 -->
+      <section id="chaining">
+        <h2><span>15</span> Method Chaining</h2>
+        <p>
+          Because <code>map</code>, <code>filter</code> and friends return
+          arrays, you can chain them into readable pipelines.
+        </p>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+const orders = [
+  { item: "Laptop", price: 900, qty: 1, paid: true },
+  { item: "Mouse",  price: 20,  qty: 3, paid: false },
+  { item: "Phone",  price: 600, qty: 2, paid: true },
+  { item: "Cable",  price: 5,   qty: 10, paid: true },
+];
+
+// Total revenue from PAID orders
+const revenue = orders
+  .filter(o => o.paid)
+  .map(o => o.price * o.qty)
+  .reduce((sum, v) => sum + v, 0);
+
+console.log("Revenue:", revenue);
+
+// Names of top-priced paid items, sorted
+const names = orders
+  .filter(o => o.paid && o.price > 10)
+  .sort((a, b) => b.price - a.price)
+  .map(o => o.item);
+
+console.log(names);</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 16 -->
+      <section id="mistakes">
+        <h2><span>16</span> Common Mistakes</h2>
+        <div class="example">
+          <textarea class="code" spellcheck="false">
+// 1. Forgetting `return` in a block-body arrow function
+const bad = [1, 2, 3].map(n => { n * 2 });
+console.log(bad);                       // [undefined, undefined, undefined]
+const good = [1, 2, 3].map(n => n * 2);
+console.log(good);
+
+// 2. Using forEach when you need a new array
+const out = [];
+[1, 2, 3].forEach(n => out.push(n * 2)); // works, but map is cleaner
+
+// 3. Comparing arrays with ===
+console.log([1, 2] === [1, 2]);         // false (different references)
+console.log(JSON.stringify([1, 2]) === JSON.stringify([1, 2])); // true
+
+// 4. Thinking `const` makes the array frozen
+const frozenLike = [1, 2];
+frozenLike.push(3);                     // allowed!
+console.log(frozenLike);
+
+// 5. Modifying an array while looping over it
+const list = [1, 2, 3, 4];
+for (const n of [...list]) {            // loop over a COPY
+  if (n % 2 === 0) list.splice(list.indexOf(n), 1);
+}
+console.log(list);
+
+// 6. indexOf can't find NaN, includes can
+console.log([NaN].indexOf(NaN), [NaN].includes(NaN));</textarea
+          >
+        </div>
+      </section>
+
+      <!-- 17 -->
+      <section id="practice">
+        <h2><span>17</span> Practice Challenges</h2>
+        <p>
+          Try to solve each challenge in the editor first, then reveal the
+          solution.
+        </p>
+
+        <div class="challenge">
+          <h4>Challenge 1 · Square the odd numbers</h4>
+          <p>
+            From <code>[1,2,3,4,5,6]</code> return the squares of only the odd
+            numbers.
+          </p>
+          <div class="example">
+            <textarea class="code" spellcheck="false">
+const nums = [1, 2, 3, 4, 5, 6];
+// your code here
+</textarea
+            >
+          </div>
+          <details>
+            <summary>Show solution</summary>
+            <pre class="solution">
+const result = nums.filter(n => n % 2 !== 0).map(n => n ** 2);
+console.log(result); // [1, 9, 25]</pre
+            >
+          </details>
+        </div>
+
+        <div class="challenge">
+          <h4>Challenge 2 · Average marks</h4>
+          <p>Calculate the average of all student marks.</p>
+          <div class="example">
+            <textarea class="code" spellcheck="false">
+const marks = [78, 92, 65, 88, 70];
+// your code here
+</textarea
+            >
+          </div>
+          <details>
+            <summary>Show solution</summary>
+            <pre class="solution">
+const avg = marks.reduce((a, b) => a + b, 0) / marks.length;
+console.log(avg); // 78.6</pre
+            >
+          </details>
+        </div>
+
+        <div class="challenge">
+          <h4>Challenge 3 · Unique &amp; sorted</h4>
+          <p>Remove duplicates and sort ascending.</p>
+          <div class="example">
+            <textarea class="code" spellcheck="false">
+const data = [5, 3, 8, 3, 1, 5, 9, 1];
+// your code here
+</textarea
+            >
+          </div>
+          <details>
+            <summary>Show solution</summary>
+            <pre class="solution">
+const result = [...new Set(data)].sort((a, b) => a - b);
+console.log(result); // [1, 3, 5, 8, 9]</pre
+            >
+          </details>
+        </div>
+
+        <div class="challenge">
+          <h4>Challenge 4 · Longest word</h4>
+          <p>Find the longest word in the array.</p>
+          <div class="example">
+            <textarea class="code" spellcheck="false">
+const words = ["code", "javascript", "array", "map"];
+// your code here
+</textarea
+            >
+          </div>
+          <details>
+            <summary>Show solution</summary>
+            <pre class="solution">
+const longest = words.reduce((a, b) => (b.length > a.length ? b : a));
+console.log(longest); // "javascript"</pre
+            >
+          </details>
+        </div>
+
+        <div class="challenge">
+          <h4>Challenge 5 · Flatten &amp; total</h4>
+          <p>Sum every number in a nested array.</p>
+          <div class="example">
+            <textarea class="code" spellcheck="false">
+const nested = [[1, 2], [3, [4, 5]], [6]];
+// your code here
+</textarea
+            >
+          </div>
+          <details>
+            <summary>Show solution</summary>
+            <pre class="solution">
+const total = nested.flat(Infinity).reduce((a, b) => a + b, 0);
+console.log(total); // 21</pre
+            >
+          </details>
+        </div>
+      </section>
+
+      <!-- 18 -->
+      <section id="cheatsheet">
+        <h2><span>18</span> Cheat Sheet</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Goal</th>
+                <th>Method</th>
+                <th>Mutates?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Add / remove at end</td>
+                <td><code>push</code> / <code>pop</code></td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Add / remove at start</td>
+                <td><code>unshift</code> / <code>shift</code></td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Insert / remove anywhere</td>
+                <td><code>splice</code></td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Copy a portion</td>
+                <td><code>slice</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Check if value exists</td>
+                <td><code>includes</code>, <code>indexOf</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Find by condition</td>
+                <td><code>find</code>, <code>findIndex</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Transform each item</td>
+                <td><code>map</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Keep matching items</td>
+                <td><code>filter</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Reduce to one value</td>
+                <td><code>reduce</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Any / all match?</td>
+                <td><code>some</code> / <code>every</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Order items</td>
+                <td><code>sort</code>, <code>reverse</code></td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <td>Ordered copy</td>
+                <td><code>toSorted</code>, <code>toReversed</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Join arrays</td>
+                <td><code>concat</code>, spread <code>[...a, ...b]</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Array → string</td>
+                <td><code>join</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Flatten nested</td>
+                <td><code>flat</code>, <code>flatMap</code></td>
+                <td>No</td>
+              </tr>
+              <tr>
+                <td>Loop for side effects</td>
+                <td><code>forEach</code>, <code>for...of</code></td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Create / convert</td>
+                <td>
+                  <code>Array.from</code>, <code>Array.of</code>,
+                  <code>fill</code>
+                </td>
+                <td>—</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="finale">
+          <h3>🎉 Thank you!</h3>
+          <p>Questions? Try changing any example above and re-running it.</p>
+        </div>
+      </section>
+
+      <footer>
+        JavaScript Arrays Lecture · Built with HTML, CSS &amp; vanilla JS
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
